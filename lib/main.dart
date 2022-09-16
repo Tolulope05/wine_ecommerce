@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:wine_ecommerce/view/intro_screen/intro_screen.dart';
+
+import 'view_model/intro_screen_model.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,12 +15,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Wine E Commerce',
+      title: 'Wine E-Commerce',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const IntroScreen(),
+      home: MultiProvider(
+        providers: [
+          Provider<IntroScreenModel>(create: (_) => IntroScreenModel()),
+        ],
+        child: const IntroScreen(),
+      ),
     );
   }
 }
