@@ -72,7 +72,7 @@ class IntroScreen extends StatelessWidget {
                   style: const TextStyle(
                     color: wineColor,
                     fontSize: 35,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w500,
                   ),
                 ),
               ),

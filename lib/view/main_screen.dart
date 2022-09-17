@@ -19,23 +19,32 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: FloatingNavBar(
-        resizeToAvoidBottomInset: false,
+        // resizeToAvoidBottomInset: false,
         color: wineColor,
         selectedIconColor: Colors.white,
         unselectedIconColor: Colors.white.withOpacity(0.6),
+
         items: [
           FloatingNavBarItem(
-              iconData: Icons.home, page: HomeScreen(), title: 'Home'),
+            iconData: Icons.home,
+            page: const HomeScreen(),
+            title: 'Home',
+          ),
           FloatingNavBarItem(
-              iconData: Icons.favorite,
-              page: FavoriteScreen(),
-              title: 'Favorite'),
+            iconData: Icons.favorite,
+            page: const FavoriteScreen(),
+            title: 'Favorite',
+          ),
           FloatingNavBarItem(
-              iconData: Icons.settings,
-              page: SettingsScreen(),
-              title: 'Settings'),
+            iconData: Icons.settings,
+            page: const SettingsScreen(),
+            title: 'Settings',
+          ),
           FloatingNavBarItem(
-              iconData: Icons.person, page: ProfileScreen(), title: 'Profile'),
+            iconData: Icons.person,
+            page: const ProfileScreen(),
+            title: 'Profile',
+          ),
         ],
         horizontalPadding: 10.0,
         hapticFeedback: true,

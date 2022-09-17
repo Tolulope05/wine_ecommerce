@@ -10,3 +10,4 @@ const String wineGlassFive = 'assets/wine_image_five.svg';
 // Colors
 const Color greyColor = Color(0XFF9A9FA7);
 const Color wineColor = Color(0XFF421926);
+const Color greyText = Color(0XFFB3B7BC);
