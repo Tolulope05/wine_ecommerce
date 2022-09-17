@@ -1,6 +1,6 @@
 class RoutesName {
 // Home Route
-  static const String homeRoute = "/";
+  static const String mainRoute = "/";
   // Introduction Screen Route
   static const String introductionScreenRoute = "/introduction-screen";
   // Details Screen Route
