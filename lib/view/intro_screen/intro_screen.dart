@@ -30,7 +30,9 @@ class IntroScreen extends StatelessWidget {
                   Container(
                     margin: const EdgeInsets.all(10),
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        introProvider.goHome(context);
+                      },
                       child: const Text(
                         "Skip",
                         style: TextStyle(
@@ -111,9 +113,12 @@ class IntroScreen extends StatelessWidget {
                     Button(
                       title: index == 2 ? "Shop" : "Next",
                       function: () {
-                        introPagecontroller.nextPage(
-                            duration: const Duration(seconds: 1),
-                            curve: Curves.easeIn);
+                        index == 2
+                            ? introProvider.goHome(context)
+                            : introPagecontroller.nextPage(
+                                duration: const Duration(seconds: 1),
+                                curve: Curves.easeIn,
+                              );
                       },
                     ),
                   ],

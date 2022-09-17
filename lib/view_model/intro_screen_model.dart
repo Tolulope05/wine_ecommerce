@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:wine_ecommerce/repository/services/navigation_services.dart';
 
 import '../database/consts.dart';
 
 class IntroScreenModel extends ChangeNotifier {
+  NavigationServices _navigationServices = NavigationServices();
   List<String> svgIcons = <String>[
     wineGlass,
     wineGlassFour,
@@ -28,5 +30,9 @@ class IntroScreenModel extends ChangeNotifier {
       height: 250,
     );
     return svgIcon;
+  }
+
+  void goHome(BuildContext context) {
+    _navigationServices.navigateToHomePage(context);
   }
 }

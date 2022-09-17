@@ -4,7 +4,6 @@ import 'package:wine_ecommerce/view/home_screen.dart';
 import 'package:wine_ecommerce/view/intro_screen/intro_screen.dart';
 
 class Routes {
-//
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case RoutesName.homeRoute:
