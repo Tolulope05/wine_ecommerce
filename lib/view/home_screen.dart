@@ -103,14 +103,16 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               GridView.builder(
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
                 itemCount: 10,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                 ),
                 itemBuilder: ((context, index) {
-                  return WineCard();
+                  return WineCard(
+                    index: index,
+                  );
                 }),
               ),
             ],

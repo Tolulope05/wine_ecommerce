@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wine_ecommerce/routes/route_name.dart';
 import 'package:wine_ecommerce/view/main_screen.dart';
 import 'package:wine_ecommerce/view/intro_screen/intro_screen.dart';
+import 'package:wine_ecommerce/view/product_details_screen.dart';
 
 class Routes {
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
@@ -14,6 +15,11 @@ class Routes {
         return MaterialPageRoute(
           builder: (BuildContext context) => const IntroScreen(),
         );
+      case RoutesName.detailsPageRoute:
+        return MaterialPageRoute(
+          builder: (context) => ProductDetailsScreen(),
+        );
+
       default:
         return MaterialPageRoute(
           builder: (context) => const Scaffold(

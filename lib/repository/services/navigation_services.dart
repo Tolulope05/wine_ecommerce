@@ -5,4 +5,13 @@ class NavigationServices {
   void navigateToHomePage(BuildContext context) {
     Navigator.pushReplacementNamed(context, RoutesName.mainRoute);
   }
+
+  void navigateToDetailsPage(
+    BuildContext context,
+  ) {
+    Navigator.pushNamed(
+      context,
+      RoutesName.detailsPageRoute,
+    );
+  }
 }
