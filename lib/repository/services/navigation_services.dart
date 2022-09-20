@@ -6,9 +6,7 @@ class NavigationServices {
     Navigator.pushReplacementNamed(context, RoutesName.mainRoute);
   }
 
-  void navigateToDetailsPage(
-    BuildContext context,
-  ) {
+  void navigateToDetailsPage(BuildContext context) {
     Navigator.pushNamed(
       context,
       RoutesName.detailsPageRoute,

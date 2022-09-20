@@ -29,12 +29,11 @@ class HomeScreenModel extends ChangeNotifier {
     print("New number is $selectedIndex");
   }
 
-  List<Wine> _wineList = <Wine>[];
+  final List<Wine> _wineList = <Wine>[];
 
   List<Wine> get wineList => _wineList;
 
   Future<List<Wine>> getWinefromDB() async {
-    Future.delayed(Duration(seconds: 5));
     List<Map<String, dynamic>> dataFromDB = TestDatabase().products;
     for (var data in dataFromDB) {
       _wineList.add(Wine.fromJson(data));

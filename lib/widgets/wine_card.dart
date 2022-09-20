@@ -14,7 +14,6 @@ class WineCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double num = 199.99;
     HomeScreenModel model = Provider.of<HomeScreenModel>(context);
     return GestureDetector(
       onTap: () {
@@ -52,7 +51,7 @@ class WineCard extends StatelessWidget {
                 wine.name,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
-                style: TextStyle(
+                style: const TextStyle(
                   color: wineColor,
                   fontSize: 16,
                 ),
