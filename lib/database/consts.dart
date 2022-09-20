@@ -14,13 +14,13 @@ const Color greyText = Color(0XFFB3B7BC);
 const Color lightBlue50 = Color(0xff7c94b6);
 
 //
-const String wineCard1 = 'assets/wines/wine_1.jpeg';
-const String wineCard2 = 'assets/wines/wine_2.jpg';
-const String wineCard3 = 'assets/wines/wine_3.jpeg';
-const String wineCard4 = 'assets/wines/wine_4.jpeg';
-const String wineCard5 = 'assets/wines/wine_5.jpeg';
-const String wineCard6 = 'assets/wines/wine_6.jpeg';
-const String wineCard7 = 'assets/wines/wine_7.jpeg';
-const String wineCard8 = 'assets/wines/wine_8.jpeg';
-const String wineCard9 = 'assets/wines/wine_9.jpeg';
-const String wineCard10 = 'assets/wines/wine_10.jpeg';
+const String wineCard1 = 'assets/wines/domaine-1.jpeg';
+const String wineCard2 = 'assets/wines/screaming-eagle.jpg';
+const String wineCard3 = 'assets/wines/domaine-2.jpg';
+const String wineCard4 = 'assets/wines/domaine-3.jpg';
+const String wineCard5 = 'assets/wines/domaine-4.jpg';
+const String wineCard6 = 'assets/wines/domaine-5.jpg';
+const String wineCard7 = 'assets/wines/domaine-6.jpg';
+const String wineCard8 = 'assets/wines/domaine-7.jpg';
+const String wineCard9 = 'assets/wines/domaine-8.jpg';
+const String wineCard10 = 'assets/wines/egon.jpg';
