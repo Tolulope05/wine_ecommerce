@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:wine_ecommerce/database/consts.dart';
+import 'package:wine_ecommerce/model/wine_model.dart';
 
 import '../view_model/home_screen_model.dart';
 
 class WineCard extends StatelessWidget {
-  final int index;
+  final Wine wine;
   const WineCard({
     Key? key,
-    required this.index,
+    required this.wine,
   }) : super(key: key);
 
   @override
@@ -35,8 +36,8 @@ class WineCard extends StatelessWidget {
               Expanded(
                   child: Container(
                 decoration: BoxDecoration(
-                  image: const DecorationImage(
-                    image: AssetImage(wineCard1),
+                  image: DecorationImage(
+                    image: AssetImage(wine.imageUrl),
                     fit: BoxFit.contain,
                   ),
                   // border: Border.all(
@@ -47,8 +48,8 @@ class WineCard extends StatelessWidget {
                 ),
               )),
               const SizedBox(height: 10),
-              const Text(
-                "Domaine Carneros Le Reve Blanc 2014",
+              Text(
+                wine.name,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(
@@ -60,7 +61,7 @@ class WineCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "\$$num",
+                    "\$${wine.price}",
                     style: const TextStyle(
                       color: wineColor,
                       fontSize: 16,

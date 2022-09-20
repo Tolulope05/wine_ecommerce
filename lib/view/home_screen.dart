@@ -5,24 +5,15 @@ import 'package:wine_ecommerce/widgets/wine_card.dart';
 
 import '../database/consts.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  var selectedIndex = 1;
-  void changeIndex(int index) {
-    selectedIndex = index;
-    setState(() {});
-    print("New number is $selectedIndex");
-  }
-
-  @override
   Widget build(BuildContext context) {
-    HomeScreenModel model = Provider.of<HomeScreenModel>(context);
+    HomeScreenModel model = Provider.of<HomeScreenModel>(
+      context,
+      listen: false,
+    );
     return Scaffold(
       body: SingleChildScrollView(
         child: SafeArea(
@@ -70,51 +61,61 @@ class _HomeScreenState extends State<HomeScreen> {
                     const EdgeInsets.symmetric(horizontal: 18, vertical: 16),
                 child: Image.asset("assets/banner.png"),
               ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.06,
-                child: ListView.builder(
-                  shrinkWrap: true,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: ((context, index) {
-                    return GestureDetector(
-                      onTap: () => changeIndex(index),
-                      child: Container(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: index == selectedIndex ? 25 : 8),
-                        decoration: BoxDecoration(
-                            color: index == selectedIndex
-                                ? greyColor.withOpacity(0.2)
-                                : Colors.transparent,
-                            borderRadius: BorderRadius.circular(16)),
-                        child: Center(
-                          child: Text(
-                            model.tags[index],
-                            style: TextStyle(
-                              color:
-                                  index == selectedIndex ? wineColor : greyText,
-                              fontSize: 18,
+              Consumer<HomeScreenModel>(builder: (context, value, child) {
+                return SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.06,
+                  child: ListView.builder(
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: ((context, index) {
+                      return GestureDetector(
+                        onTap: () => model.changeIndex(index),
+                        child: Container(
+                          padding: EdgeInsets.symmetric(
+                              horizontal:
+                                  index == model.selectedIndex ? 25 : 8),
+                          decoration: BoxDecoration(
+                              color: index == model.selectedIndex
+                                  ? greyColor.withOpacity(0.2)
+                                  : Colors.transparent,
+                              borderRadius: BorderRadius.circular(16)),
+                          child: Center(
+                            child: Text(
+                              model.tags[index],
+                              style: TextStyle(
+                                color: index == model.selectedIndex
+                                    ? wineColor
+                                    : greyText,
+                                fontSize: 18,
+                              ),
                             ),
                           ),
                         ),
+                      );
+                    }),
+                    itemCount: model.tags.length,
+                  ),
+                );
+              }),
+              FutureBuilder(
+                  future: model.getWinefromDB(),
+                  builder: (context, snapshot) {
+                    return GridView.builder(
+                      physics: const NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
+                      itemCount: model.wineList.length,
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
                       ),
+                      itemBuilder: ((context, index) {
+                        var wine = model.wineList[index];
+                        return WineCard(
+                          wine: wine,
+                        );
+                      }),
                     );
                   }),
-                  itemCount: model.tags.length,
-                ),
-              ),
-              GridView.builder(
-                physics: const NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                itemCount: 10,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                ),
-                itemBuilder: ((context, index) {
-                  return WineCard(
-                    index: index,
-                  );
-                }),
-              ),
             ],
           ),
         ),
