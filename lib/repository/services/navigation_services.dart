@@ -12,4 +12,8 @@ class NavigationServices {
       RoutesName.detailsPageRoute,
     );
   }
+
+  void navigateToPreviousPage(BuildContext context) {
+    Navigator.pop(context);
+  }
 }

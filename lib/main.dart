@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:wine_ecommerce/routes/route_name.dart';
 import 'package:wine_ecommerce/routes/routes.dart';
 import 'package:wine_ecommerce/view_model/home_screen_model.dart';
+import 'package:wine_ecommerce/view_model/product_detail_model.dart';
 
 import 'view_model/intro_screen_model.dart';
 
@@ -23,6 +24,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider<HomeScreenModel>(
           create: (_) => HomeScreenModel(),
+        ),
+        ChangeNotifierProvider<ProductDetailsModel>(
+          create: (_) => ProductDetailsModel(),
         ),
       ],
       builder: (context, child) {
