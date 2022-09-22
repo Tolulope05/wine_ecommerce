@@ -3,10 +3,15 @@ import 'package:provider/provider.dart';
 import 'package:wine_ecommerce/database/consts.dart';
 import 'package:wine_ecommerce/widgets/add_to_cart.dart';
 
+import '../model/wine_model.dart';
 import '../view_model/product_detail_model.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
-  const ProductDetailsScreen({Key? key}) : super(key: key);
+  final Wine wineData;
+  const ProductDetailsScreen({
+    Key? key,
+    required this.wineData,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -43,15 +48,36 @@ class ProductDetailsScreen extends StatelessWidget {
             height: MediaQuery.of(context).size.height * 0.4,
             decoration: BoxDecoration(
               color: lightWine,
-              image: const DecorationImage(
-                image: AssetImage(wineCard1),
+              image: DecorationImage(
+                image: AssetImage(wineData.imageUrl),
                 fit: BoxFit.contain,
               ),
               borderRadius: BorderRadius.circular(12),
             ),
           ),
           Container(
-            padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 15),
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+            child: const Text(
+              "Name",
+              style: TextStyle(
+                color: wineColor,
+                fontSize: 20,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            child: Text(
+              wineData.name,
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyText1!
+                  .copyWith(color: greyText, fontSize: 18),
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
             child: const Text(
               "Description",
               style: TextStyle(
@@ -64,7 +90,7 @@ class ProductDetailsScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Text(
-              "Check your proxy settings or contact your network administrator to make sure that the proxy server is working. If you don't believe you should be using a proxy server: Go to the Chrome menu",
+              wineData.description,
               style: Theme.of(context)
                   .textTheme
                   .bodyText1!
@@ -72,7 +98,7 @@ class ProductDetailsScreen extends StatelessWidget {
             ),
           ),
           const Padding(
-            padding: EdgeInsets.symmetric(vertical: 16, horizontal: 15),
+            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
             child: Text(
               "Nutritional Values",
               style: TextStyle(
@@ -83,7 +109,7 @@ class ProductDetailsScreen extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
+            padding: const EdgeInsets.only(right: 15, left: 15, bottom: 10),
             child: Row(
               children: [
                 Text(
@@ -94,7 +120,7 @@ class ProductDetailsScreen extends StatelessWidget {
                       .copyWith(fontSize: 16),
                 ),
                 Text(
-                  " 5g/0.03 gal",
+                  wineData.calories,
                   style: Theme.of(context)
                       .textTheme
                       .bodyText1!
@@ -110,7 +136,7 @@ class ProductDetailsScreen extends StatelessWidget {
                         .bodyText1!
                         .copyWith(fontSize: 16)),
                 Text(
-                  " 23kcal/0.03 gal",
+                  wineData.sugar,
                   style: Theme.of(context)
                       .textTheme
                       .bodyText1!
@@ -118,6 +144,17 @@ class ProductDetailsScreen extends StatelessWidget {
                 ),
                 Expanded(child: Container()),
               ],
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            child: const Text(
+              "Price: 0",
+              style: TextStyle(
+                color: wineColor,
+                fontSize: 20,
+                fontWeight: FontWeight.w500,
+              ),
             ),
           ),
           Expanded(child: Container()),

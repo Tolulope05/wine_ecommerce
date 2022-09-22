@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wine_ecommerce/model/wine_model.dart';
 import 'package:wine_ecommerce/routes/route_name.dart';
 
 class NavigationServices {
@@ -6,10 +7,11 @@ class NavigationServices {
     Navigator.pushReplacementNamed(context, RoutesName.mainRoute);
   }
 
-  void navigateToDetailsPage(BuildContext context) {
+  void navigateToDetailsPage(BuildContext context, Wine wine) {
     Navigator.pushNamed(
       context,
       RoutesName.detailsPageRoute,
+      arguments: wine,
     );
   }
 

@@ -8,8 +8,8 @@ class HomeScreenModel extends ChangeNotifier {
   int selectedIndex = 1;
   final NavigationServices _navigationServices = NavigationServices();
 
-  void goToDetailsPage(BuildContext context) {
-    _navigationServices.navigateToDetailsPage(context);
+  void goToDetailsPage(BuildContext context, Wine wine) {
+    _navigationServices.navigateToDetailsPage(context, wine);
   }
 
   List<String> tags = [

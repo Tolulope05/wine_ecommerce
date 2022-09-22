@@ -13,7 +13,6 @@ const Color wineColor = Color(0XFF421926);
 const Color midWineColor = Color(0XFFF4DEE3);
 const Color lightWine = Color(0xffFFF5F7);
 const Color greyText = Color(0XFFB3B7BC);
-// const Color lightBlue50 = Color(0xff7c94b6);
 
 //
 const String wineCard1 = 'assets/wines/domaine-1.jpeg';

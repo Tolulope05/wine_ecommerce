@@ -17,7 +17,7 @@ class WineCard extends StatelessWidget {
     HomeScreenModel model = Provider.of<HomeScreenModel>(context);
     return GestureDetector(
       onTap: () {
-        model.goToDetailsPage(context);
+        model.goToDetailsPage(context, wine);
       },
       child: Stack(children: [
         Container(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wine_ecommerce/model/wine_model.dart';
 import 'package:wine_ecommerce/routes/route_name.dart';
 import 'package:wine_ecommerce/view/main_screen.dart';
 import 'package:wine_ecommerce/view/intro_screen/intro_screen.dart';
@@ -16,8 +17,9 @@ class Routes {
           builder: (BuildContext context) => const IntroScreen(),
         );
       case RoutesName.detailsPageRoute:
+        final args = settings.arguments as Wine;
         return MaterialPageRoute(
-          builder: (context) => ProductDetailsScreen(),
+          builder: (context) => ProductDetailsScreen(wineData: args),
         );
 
       default:
