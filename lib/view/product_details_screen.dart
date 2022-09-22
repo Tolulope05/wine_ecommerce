@@ -43,7 +43,7 @@ class ProductDetailsScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Container(
-          height: MediaQuery.of(context).size.height,
+          height: MediaQuery.of(context).size.height - kToolbarHeight - 10,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
