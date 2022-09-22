@@ -158,7 +158,9 @@ class ProductDetailsScreen extends StatelessWidget {
             ),
           ),
           Expanded(child: Container()),
-          const AddCart(),
+          AddCart(
+            onCartClicked: () => model.getToCartScreen(context),
+          ),
           const SizedBox(height: 15),
         ],
       ),

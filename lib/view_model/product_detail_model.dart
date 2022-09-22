@@ -7,4 +7,8 @@ class ProductDetailsModel with ChangeNotifier {
   void getBack(BuildContext context) {
     _navigationServices.navigateToPreviousPage(context);
   }
+
+  void getToCartScreen(BuildContext context) {
+    _navigationServices.navigateToCartPage(context);
+  }
 }

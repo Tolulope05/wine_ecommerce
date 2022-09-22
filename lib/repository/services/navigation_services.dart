@@ -18,4 +18,8 @@ class NavigationServices {
   void navigateToPreviousPage(BuildContext context) {
     Navigator.pop(context);
   }
+
+  void navigateToCartPage(BuildContext context) {
+    Navigator.pushNamed(context, RoutesName.cartPageRoute);
+  }
 }

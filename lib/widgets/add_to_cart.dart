@@ -3,11 +3,15 @@ import 'package:wine_ecommerce/widgets/button.dart';
 import 'package:wine_ecommerce/widgets/icon_button.dart';
 
 class AddCart extends StatelessWidget {
-  const AddCart({Key? key}) : super(key: key);
+  final VoidCallback onCartClicked;
+  const AddCart({
+    Key? key,
+    required this.onCartClicked,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var _textController = TextEditingController(text: "1");
+    var textController = TextEditingController(text: "1");
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Row(
@@ -26,7 +30,7 @@ class AddCart extends StatelessWidget {
                 width: 30,
                 height: 30,
                 child: TextField(
-                  controller: _textController,
+                  controller: textController,
                   decoration: const InputDecoration(border: InputBorder.none),
                   enabled: false,
                 ),
@@ -39,7 +43,10 @@ class AddCart extends StatelessWidget {
               ),
             ],
           ),
-          Button(title: "Add to Cart", function: () {})
+          Button(
+            title: "Add to Cart",
+            function: onCartClicked,
+          )
         ],
       ),
     );

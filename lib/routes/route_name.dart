@@ -5,4 +5,6 @@ class RoutesName {
   static const String introductionScreenRoute = "/introduction-screen";
   // Details Screen Route
   static const String detailsPageRoute = "/detailsPageRoute";
+  // Cart Screen Route
+  static const String cartPageRoute = "/cartPageRoute";
 }
