@@ -71,7 +71,7 @@ class IntroScreen extends StatelessWidget {
                   introProvider.titleText[index],
                   style: const TextStyle(
                     color: wineColor,
-                    fontSize: 35,
+                    fontSize: 24,
                     fontWeight: FontWeight.w500,
                   ),
                 ),

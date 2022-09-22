@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:wine_ecommerce/database/consts.dart';
 import 'package:wine_ecommerce/view_model/cart_screen_model.dart';
+import 'package:wine_ecommerce/widgets/button.dart';
 import 'package:wine_ecommerce/widgets/cart_items.dart';
 
 class CartScreen extends StatelessWidget {
@@ -30,6 +31,17 @@ class CartScreen extends StatelessWidget {
       body: Column(
         children: [
           CartItem(),
+          CartItem(),
+          CartItem(),
+          CartItem(),
+          Spacer(),
+          Container(
+            child: Column(
+              children: [
+                Button(title: "title", function: () {}),
+              ],
+            ),
+          ),
         ],
       ),
     );

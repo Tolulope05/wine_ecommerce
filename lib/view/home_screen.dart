@@ -27,7 +27,7 @@ class HomeScreen extends StatelessWidget {
                     "What would you like?",
                     style: TextStyle(
                       color: wineColor,
-                      fontSize: 32,
+                      fontSize: 24,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
