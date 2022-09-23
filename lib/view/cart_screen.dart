@@ -37,6 +37,15 @@ class CartScreen extends StatelessWidget {
               child: Column(
                 children: const [
                   CartItem(),
+                  CartItem(),
+                  CartItem(),
+                  CartItem(),
+                  CartItem(),
+                  CartItem(),
+                  CartItem(),
+                  CartItem(),
+                  CartItem(),
+                  CartItem(),
                 ],
               ),
             ),
@@ -82,7 +91,9 @@ class CartScreen extends StatelessWidget {
               ),
               Container(
                 margin: const EdgeInsets.only(bottom: 8),
-                child: Button(title: "Proceed to Checkout", function: () {}),
+                child: Button(
+                    title: "Proceed to Checkout",
+                    function: () => model.getToChekOutPage(context)),
               ),
             ],
           ),

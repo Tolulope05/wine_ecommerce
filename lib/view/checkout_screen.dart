@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:wine_ecommerce/view_model/cart_screen_model.dart';
+import 'package:wine_ecommerce/widgets/custom_tab_view.dart';
 
 import '../database/consts.dart';
+import '../view_model/checkout_screen_model.dart';
 
 class CheckoutScreen extends StatelessWidget {
   const CheckoutScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    CartScreenModel model = Provider.of<CartScreenModel>(context);
+    CheckoutScreenModel model = Provider.of<CheckoutScreenModel>(context);
     return Scaffold(
       appBar: AppBar(
           elevation: 0,
@@ -22,12 +23,16 @@ class CheckoutScreen extends StatelessWidget {
                 color: wineColor,
               )),
           title: const Text(
-            "Cart",
+            "Checkout",
             style: TextStyle(
               color: wineColor,
             ),
           )),
-      body: Column(),
+      body: Column(
+        children: [
+          CustomTabView(changeTab: (int) {}, index: 1),
+        ],
+      ),
     );
   }
 }

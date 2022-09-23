@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:wine_ecommerce/database/consts.dart';
 import 'package:wine_ecommerce/routes/route_name.dart';
 import 'package:wine_ecommerce/routes/routes.dart';
 import 'package:wine_ecommerce/view_model/cart_screen_model.dart';
 import 'package:wine_ecommerce/view_model/home_screen_model.dart';
 import 'package:wine_ecommerce/view_model/product_detail_model.dart';
 
+import 'view_model/checkout_screen_model.dart';
 import 'view_model/intro_screen_model.dart';
 
 void main() {
@@ -32,14 +34,18 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider<CartScreenModel>(
           create: (_) => CartScreenModel(),
         ),
+        ChangeNotifierProvider<CheckoutScreenModel>(
+          create: (_) => CheckoutScreenModel(),
+        ),
       ],
       builder: (context, child) {
         return MaterialApp(
           title: 'Wine E-Commerce',
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
-            primarySwatch: Colors.blue,
-          ),
+              colorScheme: ColorScheme.fromSwatch().copyWith(
+            primary: wineColor,
+          )),
           initialRoute: RoutesName.introductionScreenRoute,
           onGenerateRoute: Routes.onGenerateRoute,
         );

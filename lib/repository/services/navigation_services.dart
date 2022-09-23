@@ -22,4 +22,8 @@ class NavigationServices {
   void navigateToCartPage(BuildContext context) {
     Navigator.pushNamed(context, RoutesName.cartPageRoute);
   }
+
+  void navigateToCheckOutPage(BuildContext context) {
+    Navigator.pushNamed(context, RoutesName.checkoutPageRoute);
+  }
 }

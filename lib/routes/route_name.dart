@@ -7,4 +7,6 @@ class RoutesName {
   static const String detailsPageRoute = "/detailsPageRoute";
   // Cart Screen Route
   static const String cartPageRoute = "/cartPageRoute";
+  // CheckoutPage Screen Route
+  static const String checkoutPageRoute = "/checkoutPageRoute";
 }

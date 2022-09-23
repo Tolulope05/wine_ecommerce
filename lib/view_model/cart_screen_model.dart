@@ -8,4 +8,8 @@ class CartScreenModel with ChangeNotifier {
   void getBack(BuildContext context) {
     _navigationServices.navigateToPreviousPage(context);
   }
+
+  void getToChekOutPage(BuildContext context) {
+    _navigationServices.navigateToCheckOutPage(context);
+  }
 }
