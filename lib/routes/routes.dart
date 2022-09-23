@@ -5,6 +5,7 @@ import 'package:wine_ecommerce/view/cart_screen.dart';
 import 'package:wine_ecommerce/view/checkout_screen.dart';
 import 'package:wine_ecommerce/view/main_screen.dart';
 import 'package:wine_ecommerce/view/intro_screen/intro_screen.dart';
+import 'package:wine_ecommerce/view/payment_screen.dart';
 import 'package:wine_ecommerce/view/product_details_screen.dart';
 
 class Routes {
@@ -30,6 +31,10 @@ class Routes {
       case RoutesName.checkoutPageRoute:
         return MaterialPageRoute(
           builder: (context) => const CheckoutScreen(),
+        );
+      case RoutesName.paymentPageRoute:
+        return MaterialPageRoute(
+          builder: (context) => const PaymentScreen(),
         );
 
       default:

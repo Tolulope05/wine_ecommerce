@@ -26,4 +26,8 @@ class NavigationServices {
   void navigateToCheckOutPage(BuildContext context) {
     Navigator.pushNamed(context, RoutesName.checkoutPageRoute);
   }
+
+  void navigateToPaymentPage(BuildContext context) {
+    Navigator.pushNamed(context, RoutesName.paymentPageRoute);
+  }
 }

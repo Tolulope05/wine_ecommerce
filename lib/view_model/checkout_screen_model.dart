@@ -20,6 +20,10 @@ class CheckoutScreenModel with ChangeNotifier {
     _navigationServices.navigateToPreviousPage(context);
   }
 
+  void goToPayment(BuildContext context) {
+    _navigationServices.navigateToPaymentPage(context);
+  }
+
   final TextEditingController locationController =
       TextEditingController(text: "Apartment number, Office floor");
 }

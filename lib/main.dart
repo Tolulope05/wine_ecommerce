@@ -5,6 +5,7 @@ import 'package:wine_ecommerce/routes/route_name.dart';
 import 'package:wine_ecommerce/routes/routes.dart';
 import 'package:wine_ecommerce/view_model/cart_screen_model.dart';
 import 'package:wine_ecommerce/view_model/home_screen_model.dart';
+import 'package:wine_ecommerce/view_model/payment_screen_model.dart';
 import 'package:wine_ecommerce/view_model/product_detail_model.dart';
 
 import 'view_model/checkout_screen_model.dart';
@@ -36,6 +37,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider<CheckoutScreenModel>(
           create: (_) => CheckoutScreenModel(),
+        ),
+        ChangeNotifierProvider<PaymentScreenmodel>(
+          create: (_) => PaymentScreenmodel(),
         ),
       ],
       builder: (context, child) {
