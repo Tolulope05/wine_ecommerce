@@ -47,7 +47,7 @@ class CartItem extends StatelessWidget {
                         style: TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       Row(
                         children: [
                           GestureDetector(

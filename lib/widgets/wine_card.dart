@@ -81,8 +81,8 @@ class WineCard extends StatelessWidget {
         Positioned(
             right: 10,
             top: 10,
-            child:
-                IconButton(onPressed: () {}, icon: Icon(Icons.favorite_border)))
+            child: IconButton(
+                onPressed: () {}, icon: const Icon(Icons.favorite_border)))
       ]),
     );
   }

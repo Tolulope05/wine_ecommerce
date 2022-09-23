@@ -13,21 +13,22 @@ class CartScreen extends StatelessWidget {
     CartScreenModel model = Provider.of<CartScreenModel>(context);
     return Scaffold(
       appBar: AppBar(
-          elevation: 0,
-          centerTitle: true,
-          backgroundColor: lightWine,
-          leading: IconButton(
-              onPressed: () => model.getBack(context),
-              icon: const Icon(
-                Icons.arrow_back,
-                color: wineColor,
-              )),
-          title: const Text(
-            "Cart",
-            style: TextStyle(
+        elevation: 0,
+        centerTitle: true,
+        backgroundColor: lightWine,
+        leading: IconButton(
+            onPressed: () => model.getBack(context),
+            icon: const Icon(
+              Icons.arrow_back,
               color: wineColor,
-            ),
-          )),
+            )),
+        title: const Text(
+          "Cart",
+          style: TextStyle(
+            color: wineColor,
+          ),
+        ),
+      ),
       body: Column(
         children: [
           SizedBox(

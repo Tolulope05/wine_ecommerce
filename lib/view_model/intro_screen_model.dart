@@ -5,7 +5,7 @@ import 'package:wine_ecommerce/repository/services/navigation_services.dart';
 import '../database/consts.dart';
 
 class IntroScreenModel extends ChangeNotifier {
-  NavigationServices _navigationServices = NavigationServices();
+  final NavigationServices _navigationServices = NavigationServices();
   List<String> svgIcons = <String>[
     wineGlass,
     wineGlassFour,
