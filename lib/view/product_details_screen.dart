@@ -153,8 +153,8 @@ class ProductDetailsScreen extends StatelessWidget {
               ),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 15),
-                child: const Text(
-                  "Price: 0",
+                child: Text(
+                  "Price: \$${wineData.price}",
                   style: TextStyle(
                     color: wineColor,
                     fontSize: 20,

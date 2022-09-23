@@ -4,6 +4,7 @@ import 'package:wine_ecommerce/widgets/custom_tab_view.dart';
 
 import '../database/consts.dart';
 import '../view_model/checkout_screen_model.dart';
+import '../widgets/button.dart';
 
 class CheckoutScreen extends StatelessWidget {
   const CheckoutScreen({Key? key}) : super(key: key);
@@ -28,12 +29,105 @@ class CheckoutScreen extends StatelessWidget {
               color: wineColor,
             ),
           )),
-      body: Column(
+      body: Stack(
         children: [
-          CustomTabView(
-            changeTab: (int int) => model.chnagetabview(int),
-            index: model.tabView,
+          Column(
+            children: [
+              CustomTabView(
+                changeTab: (int int) => model.chnagetabview(int),
+                index: model.tabView,
+                tags: model.tags,
+              ),
+              model.tabView == 0
+                  ? Column(
+                      children: [
+                        const ListTile(
+                          leading: Icon(
+                            Icons.access_time_sharp,
+                          ),
+                          title: Text("30-40 mins"),
+                        ),
+                        const ListTile(
+                          leading: Icon(
+                            Icons.pin_drop,
+                          ),
+                          title: Text("13 OakView, Lagos Nigeria"),
+                        ),
+                        Container(
+                          height: 300,
+                          margin: const EdgeInsets.symmetric(
+                            horizontal: 15,
+                            vertical: 10,
+                          ),
+                          decoration:
+                              BoxDecoration(color: greyColor.withOpacity(0.2)),
+                          child: const Center(
+                            child: Text("Map View"),
+                          ),
+                        ),
+                        Container(
+                          margin: const EdgeInsets.only(
+                            left: 15,
+                            right: 15,
+                            top: 5,
+                            bottom: 10,
+                          ),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 10, vertical: 10),
+                          decoration: BoxDecoration(
+                              color: Colors.grey.shade200,
+                              borderRadius: BorderRadius.circular(15)),
+                          height: 45,
+                          child: TextField(
+                            controller: model.locationController,
+                            onTap: () {},
+                            onChanged: (value) {
+                              model.locationController.text = value;
+                            },
+                            decoration:
+                                const InputDecoration(border: InputBorder.none),
+                          ),
+                        ),
+                        Container(
+                          margin: const EdgeInsets.symmetric(horizontal: 15),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: const [
+                              Text(
+                                "Total Price:",
+                                style: TextStyle(
+                                  color: wineColor,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              Text(
+                                "\$2999",
+                                style: TextStyle(
+                                  color: wineColor,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    )
+                  : const Center(
+                      child: Text("Hello"),
+                    )
+            ],
           ),
+          Positioned(
+            bottom: 5,
+            left: 1,
+            right: 1,
+            child: Button(
+              function: () {},
+              title: "Proceed to Payment",
+            ),
+          )
         ],
       ),
     );

@@ -9,9 +9,17 @@ class CheckoutScreenModel with ChangeNotifier {
     notifyListeners();
   }
 
+  final List<String> tags = [
+    "Delivery",
+    "Pickup",
+  ];
+
   final NavigationServices _navigationServices = NavigationServices();
 
   void getBack(BuildContext context) {
     _navigationServices.navigateToPreviousPage(context);
   }
+
+  final TextEditingController locationController =
+      TextEditingController(text: "Apartment number, Office floor");
 }

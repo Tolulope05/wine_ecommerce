@@ -8,6 +8,10 @@ class CartItem extends StatelessWidget {
   Widget build(BuildContext context) {
     double deviceSize = MediaQuery.of(context).size.width;
     return Container(
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.grey.shade200),
+        borderRadius: BorderRadius.circular(10),
+      ),
       margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
       child: Row(
         children: [
@@ -33,7 +37,9 @@ class CartItem extends StatelessWidget {
                 SizedBox(
                   width: deviceSize * 0.65,
                   child: const Text(
-                    "This is the wine name,Full details and soon, stayed tuned",
+                    "This is the wine name,full details and soon, stayed tuned  Tolu blah blah jdjdjddjdjdhdhhhdhdh",
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                   ),
                 ),
