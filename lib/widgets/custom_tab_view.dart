@@ -21,20 +21,28 @@ class _CustomTabViewState extends State<CustomTabView> {
   ];
 
   Widget _buildTags(int index) {
-    return GestureDetector(
-      onTap: () {
-        widget.changeTab(index);
-      },
-      child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 15),
-        decoration: BoxDecoration(
-          color: widget.index == index ? wineColor : null,
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: Text(
-          _tags[index],
-          style: TextStyle(
-            color: widget.index != index ? Colors.black : Colors.white,
+    return Expanded(
+      child: GestureDetector(
+        onTap: () {
+          widget.changeTab(index);
+        },
+        child: Container(
+          padding: const EdgeInsets.symmetric(
+            vertical: 15,
+            horizontal: 30,
+          ),
+          decoration: BoxDecoration(
+            color: widget.index == index ? wineColor : null,
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: Center(
+            child: Text(
+              _tags[index],
+              style: TextStyle(
+                color: widget.index != index ? Colors.black : Colors.white,
+                fontSize: 18,
+              ),
+            ),
           ),
         ),
       ),
@@ -44,15 +52,13 @@ class _CustomTabViewState extends State<CustomTabView> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-      padding: const EdgeInsets.all(10),
-      width: double.maxFinite,
+      margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         color: Colors.grey.shade200,
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: _tags
             .asMap()
             .entries

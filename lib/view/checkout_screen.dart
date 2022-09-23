@@ -30,7 +30,10 @@ class CheckoutScreen extends StatelessWidget {
           )),
       body: Column(
         children: [
-          CustomTabView(changeTab: (int) {}, index: 1),
+          CustomTabView(
+            changeTab: (int int) => model.chnagetabview(int),
+            index: model.tabView,
+          ),
         ],
       ),
     );
