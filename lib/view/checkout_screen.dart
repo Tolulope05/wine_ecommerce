@@ -124,7 +124,7 @@ class CheckoutScreen extends StatelessWidget {
             left: 1,
             right: 1,
             child: Button(
-              function: () {},
+              function: () => model.goToPayment(context),
               title: "Proceed to Payment",
             ),
           )
