@@ -88,34 +88,36 @@ class CheckoutScreen extends StatelessWidget {
                                 const InputDecoration(border: InputBorder.none),
                           ),
                         ),
+                      ],
+                    )
+                  : Column(
+                      children: [
+                        const ListTile(
+                          leading: Icon(
+                            Icons.access_time_sharp,
+                          ),
+                          title: Text("Available on XX/YY/ZZZZ"),
+                        ),
+                        const ListTile(
+                          leading: Icon(
+                            Icons.pin_drop,
+                          ),
+                          title: Text("13 OakView, Lagos Nigeria"),
+                        ),
                         Container(
-                          margin: const EdgeInsets.symmetric(horizontal: 15),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: const [
-                              Text(
-                                "Total Price:",
-                                style: TextStyle(
-                                  color: wineColor,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                              Text(
-                                "\$2999",
-                                style: TextStyle(
-                                  color: wineColor,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                            ],
+                          height: 300,
+                          margin: const EdgeInsets.symmetric(
+                            horizontal: 15,
+                            vertical: 10,
+                          ),
+                          decoration:
+                              BoxDecoration(color: greyColor.withOpacity(0.2)),
+                          child: const Center(
+                            child:
+                                Text("Map Guide showing our Pickup Locattion"),
                           ),
                         ),
                       ],
-                    )
-                  : const Center(
-                      child: Text("Hello"),
                     )
             ],
           ),
@@ -123,9 +125,38 @@ class CheckoutScreen extends StatelessWidget {
             bottom: 5,
             left: 1,
             right: 1,
-            child: Button(
-              function: () => model.goToPayment(context),
-              title: "Proceed to Payment",
+            child: Column(
+              children: [
+                Container(
+                  margin:
+                      const EdgeInsets.only(bottom: 20, right: 15, left: 15),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      Text(
+                        "Total Price:",
+                        style: TextStyle(
+                          color: wineColor,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      Text(
+                        "\$2999",
+                        style: TextStyle(
+                          color: wineColor,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Button(
+                  function: () => model.goToPayment(context),
+                  title: "Proceed to Payment",
+                ),
+              ],
             ),
           )
         ],

@@ -9,7 +9,7 @@ import '../../view_model/payment_screen_model.dart';
 import '../../view_model/product_detail_model.dart';
 
 class ProvidersServices {
-  ///
+  /// App Provider Core
   static List<SingleChildWidget> appProviders = [
     ChangeNotifierProvider<IntroScreenModel>(
       create: (_) => IntroScreenModel(),
