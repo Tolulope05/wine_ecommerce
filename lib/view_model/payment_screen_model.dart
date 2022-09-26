@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 import '../repository/services/navigation_services.dart';
 
@@ -7,5 +7,9 @@ class PaymentScreenmodel with ChangeNotifier {
 
   void getBack(BuildContext context) {
     _navigationServices.navigateToPreviousPage(context);
+  }
+
+  void getToPayment(BuildContext context) {
+    _navigationServices.navigateToSuccessPage(context);
   }
 }

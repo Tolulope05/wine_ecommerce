@@ -57,7 +57,9 @@ class PaymentScreen extends StatelessWidget {
                   ),
                   GestureDetector(
                     behavior: HitTestBehavior.opaque,
-                    onTap: () {},
+                    onTap: () {
+                      model.getToPayment(context);
+                    },
                     child: Container(
                       padding: const EdgeInsets.all(12),
                       decoration: BoxDecoration(

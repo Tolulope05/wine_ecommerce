@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../database/consts.dart';
+
 class SuccessPayment extends StatelessWidget {
   const SuccessPayment({Key? key}) : super(key: key);
 
@@ -9,7 +11,7 @@ class SuccessPayment extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            Image.asset(""),
+            Image.asset(wineCheer),
           ],
         ),
       ),

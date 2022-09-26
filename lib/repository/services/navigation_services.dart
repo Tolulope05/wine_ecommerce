@@ -30,4 +30,8 @@ class NavigationServices {
   void navigateToPaymentPage(BuildContext context) {
     Navigator.pushNamed(context, RoutesName.paymentPageRoute);
   }
+
+  void navigateToSuccessPage(BuildContext context) {
+    Navigator.pushReplacementNamed(context, RoutesName.paymentSuccess);
+  }
 }

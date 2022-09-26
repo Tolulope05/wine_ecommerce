@@ -8,6 +8,8 @@ import 'package:wine_ecommerce/view/intro_screen/intro_screen.dart';
 import 'package:wine_ecommerce/view/payment_screen.dart';
 import 'package:wine_ecommerce/view/product_details_screen.dart';
 
+import '../view/success_payment.dart';
+
 class Routes {
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -35,6 +37,10 @@ class Routes {
       case RoutesName.paymentPageRoute:
         return MaterialPageRoute(
           builder: (context) => const PaymentScreen(),
+        );
+      case RoutesName.paymentSuccess:
+        return MaterialPageRoute(
+          builder: (context) => const SuccessPayment(),
         );
 
       default:
