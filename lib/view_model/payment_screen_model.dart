@@ -12,4 +12,8 @@ class PaymentScreenmodel with ChangeNotifier {
   void getToPayment(BuildContext context) {
     _navigationServices.navigateToSuccessPage(context);
   }
+
+  void getToHome(BuildContext context) {
+    _navigationServices.navigateToHomePage(context);
+  }
 }
