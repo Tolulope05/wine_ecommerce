@@ -1,11 +1,9 @@
-import 'package:floating_navbar/floating_navbar.dart';
-import 'package:floating_navbar/floating_navbar_item.dart';
 import 'package:flutter/material.dart';
 import 'package:wine_ecommerce/database/consts.dart';
+import 'package:wine_ecommerce/view/cart_screen.dart';
 import 'package:wine_ecommerce/view/favorite_screen.dart';
 import 'package:wine_ecommerce/view/home_screen.dart';
 import 'package:wine_ecommerce/view/profile_screen.dart';
-import 'package:wine_ecommerce/view/settings_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -15,39 +13,47 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
+  int _selectedIndex = 0;
+  List<Widget> screens = [
+    const HomeScreen(),
+    const FavoriteScreen(),
+    const CartScreen(),
+    const ProfileScreen(),
+  ];
+
+  void chnageScreenTap(int selectedScreenIndex) {
+    setState(() {
+      _selectedIndex = selectedScreenIndex;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: FloatingNavBar(
-        // resizeToAvoidBottomInset: false,
-        color: wineColor,
-        selectedIconColor: Colors.white,
-        unselectedIconColor: Colors.white.withOpacity(0.6),
-
-        items: [
-          FloatingNavBarItem(
-            iconData: Icons.home,
-            page: const HomeScreen(),
-            title: 'Home',
+      body: screens.elementAt(_selectedIndex),
+      bottomNavigationBar: BottomNavigationBar(
+        onTap: chnageScreenTap,
+        currentIndex: _selectedIndex,
+        selectedItemColor: wineColor,
+        unselectedItemColor: greyColor,
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: "Home",
           ),
-          FloatingNavBarItem(
-            iconData: Icons.favorite,
-            page: const FavoriteScreen(),
-            title: 'Favorite',
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite),
+            label: "Favorite",
           ),
-          FloatingNavBarItem(
-            iconData: Icons.settings,
-            page: const SettingsScreen(),
-            title: 'Settings',
+          BottomNavigationBarItem(
+            icon: Icon(Icons.fact_check_outlined),
+            label: "Cart",
           ),
-          FloatingNavBarItem(
-            iconData: Icons.person,
-            page: const ProfileScreen(),
-            title: 'Profile',
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: "Settings",
           ),
         ],
-        horizontalPadding: 10.0,
-        hapticFeedback: true,
       ),
     );
   }
