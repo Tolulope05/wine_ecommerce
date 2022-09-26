@@ -15,9 +15,7 @@ class IntroScreen extends StatelessWidget {
     PageController introPagecontroller = PageController();
     return Scaffold(
         body: PageView.builder(
-      // physics: const NeverScrollableScrollPhysics(),
       controller: introPagecontroller,
-
       itemBuilder: ((context, index) {
         return SafeArea(
           child: Column(

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:wine_ecommerce/view_model/payment_screen_model.dart';
-import 'package:wine_ecommerce/widgets/credit_card_input.dart';
 
 import '../database/consts.dart';
 
@@ -29,7 +28,58 @@ class PaymentScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: Center(),
+      body: Container(
+        padding: const EdgeInsets.all(10),
+        child: Center(
+          child: Card(
+            child: SizedBox(
+              width: MediaQuery.of(context).size.width * 0.6,
+              height: 200,
+              child: Column(
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.symmetric(
+                      vertical: 20,
+                    ),
+                    child: Text(
+                      "Payment Options",
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(vertical: 15),
+                    child: Text(
+                      "\$200.00",
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    ),
+                  ),
+                  GestureDetector(
+                    behavior: HitTestBehavior.opaque,
+                    onTap: () {},
+                    child: Container(
+                      padding: const EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        color: wineColor,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: const Text(
+                        "Pay with PayStack",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 16,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
