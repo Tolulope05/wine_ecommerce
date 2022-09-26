@@ -29,12 +29,7 @@ class PaymentScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: Column(
-        children: const [
-          CreditCardInput(title: "Credit Card"),
-          CreditCardInput(title: "Post Code", icon: Icons.cancel),
-        ],
-      ),
+      body: Center(),
     );
   }
 }
