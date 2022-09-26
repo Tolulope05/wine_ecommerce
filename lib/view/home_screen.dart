@@ -98,24 +98,25 @@ class HomeScreen extends StatelessWidget {
                 );
               }),
               FutureBuilder(
-                  future: model.getWinefromDB(),
-                  builder: (context, snapshot) {
-                    return GridView.builder(
-                      physics: const NeverScrollableScrollPhysics(),
-                      shrinkWrap: true,
-                      itemCount: model.wineList.length,
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                      ),
-                      itemBuilder: ((context, index) {
-                        var wine = model.wineList[index];
-                        return WineCard(
-                          wine: wine,
-                        );
-                      }),
-                    );
-                  }),
+                future: model.getWinefromDB(),
+                builder: (context, snapshot) {
+                  return GridView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    itemCount: model.wineList.length,
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                    ),
+                    itemBuilder: ((context, index) {
+                      var wine = model.wineList[index];
+                      return WineCard(
+                        wine: wine,
+                      );
+                    }),
+                  );
+                },
+              ),
             ],
           ),
         ),
