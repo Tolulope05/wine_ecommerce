@@ -31,18 +31,10 @@ class CartScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          SizedBox(
-            height: MediaQuery.of(context).size.height * 0.7,
+          Expanded(
             child: SingleChildScrollView(
               child: Column(
                 children: const [
-                  CartItem(),
-                  CartItem(),
-                  CartItem(),
-                  CartItem(),
-                  CartItem(),
-                  CartItem(),
-                  CartItem(),
                   CartItem(),
                   CartItem(),
                   CartItem(),
@@ -50,7 +42,6 @@ class CartScreen extends StatelessWidget {
               ),
             ),
           ),
-          const Spacer(),
           Column(
             children: [
               Container(
