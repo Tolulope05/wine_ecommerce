@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:wine_ecommerce/model/wine_model.dart';
 import 'package:wine_ecommerce/routes/route_name.dart';
+import 'package:wine_ecommerce/view/authentication_screen/sign_up_screen.dart';
 import 'package:wine_ecommerce/view/cart_screen.dart';
 import 'package:wine_ecommerce/view/checkout_screen.dart';
 import 'package:wine_ecommerce/view/main_screen.dart';
 import 'package:wine_ecommerce/view/intro_screen/intro_screen.dart';
 import 'package:wine_ecommerce/view/payment_screen.dart';
 import 'package:wine_ecommerce/view/product_details_screen.dart';
-import 'package:wine_ecommerce/view/signing/sign_in_screen.dart';
 
+import '../view/authentication_screen/sign_in_screen.dart';
 import '../view/success_payment.dart';
 
 class Routes {
@@ -46,6 +47,10 @@ class Routes {
       case RoutesName.signin:
         return MaterialPageRoute(
           builder: (context) => const SignIn(),
+        );
+      case RoutesName.signup:
+        return MaterialPageRoute(
+          builder: (context) => const SignUp(),
         );
 
       default:

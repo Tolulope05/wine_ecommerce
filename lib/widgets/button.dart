@@ -4,10 +4,14 @@ import 'package:wine_ecommerce/database/consts.dart';
 class Button extends StatelessWidget {
   final String title;
   final VoidCallback function;
-  const Button({
+  Color backgroundcolor;
+  Color textColor;
+  Button({
     Key? key,
     required this.title,
     required this.function,
+    this.backgroundcolor = wineColor,
+    this.textColor = Colors.white,
   }) : super(key: key);
 
   @override
@@ -18,14 +22,16 @@ class Button extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(14),
-          color: wineColor,
-        ),
+            borderRadius: BorderRadius.circular(14),
+            color: backgroundcolor,
+            border: Border.all(
+              color: wineColor,
+            )),
         child: Center(
           child: Text(
             title,
-            style: const TextStyle(
-              color: Colors.white,
+            style: TextStyle(
+              color: textColor,
             ),
           ),
         ),

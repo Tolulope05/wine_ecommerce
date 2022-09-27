@@ -1,6 +1,7 @@
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 
+import '../../view_model/authentication_screen_model.dart';
 import '../../view_model/cart_screen_model.dart';
 import '../../view_model/checkout_screen_model.dart';
 import '../../view_model/home_screen_model.dart';
@@ -32,6 +33,9 @@ class ProvidersServices {
     ),
     ChangeNotifierProvider<ProfileScreenModel>(
       create: (_) => ProfileScreenModel(),
+    ),
+    ChangeNotifierProvider<AuthScreenModel>(
+      create: (_) => AuthScreenModel(),
     ),
   ];
 }

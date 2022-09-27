@@ -38,4 +38,8 @@ class NavigationServices {
   void navigateToLoginPage(BuildContext context) {
     Navigator.pushNamed(context, RoutesName.signin);
   }
+
+  void navigateToSignupPage(BuildContext context) {
+    Navigator.pushNamed(context, RoutesName.signup);
+  }
 }
