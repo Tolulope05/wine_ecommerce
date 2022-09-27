@@ -41,135 +41,131 @@ class ProductDetailsScreen extends StatelessWidget {
         ],
         elevation: 0,
       ),
-      body: SingleChildScrollView(
-        child: SizedBox(
-          height: MediaQuery.of(context).size.height - kToolbarHeight - 10,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                height: MediaQuery.of(context).size.height * 0.4,
-                decoration: BoxDecoration(
-                  color: lightWine,
-                  image: DecorationImage(
-                    image: AssetImage(wineData.imageUrl),
-                    fit: BoxFit.contain,
-                  ),
-                  borderRadius: BorderRadius.circular(12),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                color: lightWine,
+                image: DecorationImage(
+                  image: AssetImage(wineData.imageUrl),
+                  fit: BoxFit.contain,
                 ),
+                borderRadius: BorderRadius.circular(12),
               ),
-              Container(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-                child: const Text(
-                  "Name",
-                  style: TextStyle(
-                    color: wineColor,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+            child: const Text(
+              "Name",
+              style: TextStyle(
+                color: wineColor,
+                fontSize: 20,
+                fontWeight: FontWeight.w500,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15),
-                child: Text(
-                  wineData.name,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: Text(
+              wineData.name,
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyText1!
+                  .copyWith(color: greyText, fontSize: 18),
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+            child: const Text(
+              "Description",
+              style: TextStyle(
+                color: wineColor,
+                fontSize: 20,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            child: Text(
+              wineData.description,
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyText1!
+                  .copyWith(color: greyText),
+            ),
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+            child: Text(
+              "Nutritional Values",
+              style: TextStyle(
+                color: wineColor,
+                fontSize: 20,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(right: 15, left: 15, bottom: 10),
+            child: Row(
+              children: [
+                Text(
+                  "Calories:",
                   style: Theme.of(context)
                       .textTheme
                       .bodyText1!
-                      .copyWith(color: greyText, fontSize: 18),
+                      .copyWith(fontSize: 16),
                 ),
-              ),
-              Container(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-                child: const Text(
-                  "Description",
-                  style: TextStyle(
-                    color: wineColor,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15),
-                child: Text(
-                  wineData.description,
+                Text(
+                  wineData.calories,
                   style: Theme.of(context)
                       .textTheme
                       .bodyText1!
                       .copyWith(color: greyText),
                 ),
-              ),
-              const Padding(
-                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-                child: Text(
-                  "Nutritional Values",
-                  style: TextStyle(
-                    color: wineColor,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w500,
-                  ),
+                Expanded(
+                  flex: 1,
+                  child: Container(),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(right: 15, left: 15, bottom: 10),
-                child: Row(
-                  children: [
-                    Text(
-                      "Calories:",
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodyText1!
-                          .copyWith(fontSize: 16),
-                    ),
-                    Text(
-                      wineData.calories,
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodyText1!
-                          .copyWith(color: greyText),
-                    ),
-                    Expanded(
-                      flex: 1,
-                      child: Container(),
-                    ),
-                    Text("Sugar:",
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodyText1!
-                            .copyWith(fontSize: 16)),
-                    Text(
-                      wineData.sugar,
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodyText1!
-                          .copyWith(color: greyText),
-                    ),
-                    Expanded(child: Container()),
-                  ],
+                Text("Sugar:",
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyText1!
+                        .copyWith(fontSize: 16)),
+                Text(
+                  wineData.sugar,
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyText1!
+                      .copyWith(color: greyText),
                 ),
-              ),
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 15),
-                child: Text(
-                  "Price: \$${wineData.price}",
-                  style: TextStyle(
-                    color: wineColor,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ),
-              Expanded(child: Container()),
-              AddCart(
-                onCartClicked: () => model.getToCartScreen(context),
-              ),
-              const SizedBox(height: 15),
-            ],
+                Expanded(child: Container()),
+              ],
+            ),
           ),
-        ),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            child: Text(
+              "Price: \$${wineData.price}",
+              style: const TextStyle(
+                color: wineColor,
+                fontSize: 20,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ),
+          Container(
+            margin: const EdgeInsets.symmetric(vertical: 15),
+            child: AddCart(
+              onCartClicked: () => model.getToCartScreen(context),
+            ),
+          ),
+          const SizedBox(height: 15),
+        ],
       ),
     );
   }

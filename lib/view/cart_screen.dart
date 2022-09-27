@@ -16,12 +16,12 @@ class CartScreen extends StatelessWidget {
         elevation: 0,
         centerTitle: true,
         backgroundColor: lightWine,
-        leading: IconButton(
-            onPressed: () => model.getBack(context),
-            icon: const Icon(
-              Icons.arrow_back,
-              color: wineColor,
-            )),
+        // leading: IconButton(
+        //     onPressed: () => model.getBack(context),
+        //     icon: const Icon(
+        //       Icons.arrow_back,
+        //       color: wineColor,
+        //     )),
         title: const Text(
           "Cart",
           style: TextStyle(

@@ -13,7 +13,14 @@ class FavoriteScreen extends StatelessWidget {
       appBar: AppBar(
         leading: const SizedBox.shrink(),
         centerTitle: true,
-        title: const Text("Favorite Wine"),
+        title: const Text(
+          "Favorite Wine",
+          style: TextStyle(
+            color: wineColor,
+          ),
+        ),
+        elevation: 0,
+        backgroundColor: lightWine,
       ),
       body: GridView.builder(
         // physics: const NeverScrollableScrollPhysics(),

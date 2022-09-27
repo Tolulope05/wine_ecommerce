@@ -54,7 +54,7 @@ class CheckoutScreen extends StatelessWidget {
                           title: Text("13 OakView, Lagos Nigeria"),
                         ),
                         Container(
-                          height: 300,
+                          height: 220,
                           margin: const EdgeInsets.symmetric(
                             horizontal: 15,
                             vertical: 10,
@@ -105,7 +105,7 @@ class CheckoutScreen extends StatelessWidget {
                           title: Text("13 OakView, Lagos Nigeria"),
                         ),
                         Container(
-                          height: 300,
+                          height: 220,
                           margin: const EdgeInsets.symmetric(
                             horizontal: 15,
                             vertical: 10,
