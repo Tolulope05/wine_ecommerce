@@ -10,11 +10,21 @@ class AuthScreenModel extends ChangeNotifier {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
+  // SIGNUP
+  TextEditingController firstnameController = TextEditingController();
+  TextEditingController lastnameController = TextEditingController();
+  TextEditingController emailSignUpController = TextEditingController();
+
+  //Navigation
   void goBack(BuildContext context) {
     _navigationServices.navigateToPreviousPage(context);
   }
 
   void goToSignUp(BuildContext context) {
+    _navigationServices.navigateToSignupPage(context);
+  }
+
+  void goToSignIn(BuildContext context) {
     _navigationServices.navigateToSignupPage(context);
   }
 }

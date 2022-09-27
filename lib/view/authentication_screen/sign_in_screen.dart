@@ -19,6 +19,15 @@ class SignIn extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                GestureDetector(
+                  onTap: () {
+                    model.goBack(context);
+                  },
+                  child: Container(
+                    margin: const EdgeInsets.symmetric(vertical: 20),
+                    child: Icon(Icons.chevron_left_outlined),
+                  ),
+                ),
                 Text(
                   "Sign In",
                   style: Theme.of(context).textTheme.headline6,
@@ -132,7 +141,7 @@ class TextfieldInputForm extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10),
       decoration: BoxDecoration(
-        border: Border.all(),
+        border: Border.all(color: Colors.grey.shade500),
         borderRadius: BorderRadius.circular(10),
       ),
       child: TextField(
