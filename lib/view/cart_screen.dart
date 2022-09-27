@@ -78,13 +78,16 @@ class CartScreen extends StatelessWidget {
                 ),
               ),
               Container(
-                height: 20,
-              ),
-              Container(
-                margin: const EdgeInsets.only(bottom: 8),
+                margin: const EdgeInsets.only(
+                  bottom: 8,
+                  right: 20,
+                  left: 20,
+                  top: 20,
+                ),
                 child: Button(
-                    title: "Proceed to Checkout",
-                    function: () => model.getToChekOutPage(context)),
+                  title: "Proceed to Checkout",
+                  function: () => model.getToChekOutPage(context),
+                ),
               ),
             ],
           ),

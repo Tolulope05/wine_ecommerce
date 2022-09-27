@@ -7,6 +7,7 @@ import '../../view_model/home_screen_model.dart';
 import '../../view_model/intro_screen_model.dart';
 import '../../view_model/payment_screen_model.dart';
 import '../../view_model/product_detail_model.dart';
+import '../../view_model/profile_screen_model.dart';
 
 class ProvidersServices {
   /// App Provider Core
@@ -28,6 +29,9 @@ class ProvidersServices {
     ),
     ChangeNotifierProvider<PaymentScreenmodel>(
       create: (_) => PaymentScreenmodel(),
+    ),
+    ChangeNotifierProvider<ProfileScreenModel>(
+      create: (_) => ProfileScreenModel(),
     ),
   ];
 }
