@@ -17,12 +17,13 @@ class BoardingItem extends StatelessWidget {
       child: Scaffold(
         body: SingleChildScrollView(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
                 padding: const EdgeInsets.all(10.0),
                 child: widget,
               ),
-              Padding(
+              Container(
                 padding: const EdgeInsets.all(35.0),
                 child: Column(
                   children: [

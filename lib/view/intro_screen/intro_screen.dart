@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:provider/provider.dart';
 import 'package:wine_ecommerce/database/consts.dart';
 import 'package:wine_ecommerce/view/intro_screen/boarding_item.dart';
@@ -31,6 +32,7 @@ class _IntroScreenState extends State<IntroScreen>
     return Scaffold(
       body: SafeArea(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const SizedBox(height: 10),
             Align(
@@ -78,7 +80,7 @@ class _IntroScreenState extends State<IntroScreen>
               ),
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 TabPageSelector(
                   controller: controller,
@@ -87,7 +89,6 @@ class _IntroScreenState extends State<IntroScreen>
                   borderStyle: BorderStyle.none,
                   indicatorSize: 16,
                 ),
-                const SizedBox(width: 40),
                 Button(
                   title: controller.index == 2 ? "Home" : "Next",
                   function: () {
