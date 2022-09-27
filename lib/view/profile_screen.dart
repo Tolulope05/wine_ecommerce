@@ -14,21 +14,12 @@ class ProfileScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            Container(
-              height: 65,
-              decoration: const BoxDecoration(
-                color: midWineColor,
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(100),
-                  bottomRight: Radius.circular(100),
-                ),
-              ),
-            ),
             Stack(
               children: [
                 Container(
                   height: 100,
                   width: 100,
+                  margin: const EdgeInsets.only(top: 20),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
                     image: const DecorationImage(
@@ -77,49 +68,71 @@ class ProfileScreen extends StatelessWidget {
                 height: 1,
               ),
             ),
-            ListTile(
-              leading: const Icon(
-                Icons.perm_identity_sharp,
+            Flexible(
+              child: ListTile(
+                leading: const Icon(
+                  Icons.perm_identity_sharp,
+                ),
+                title: const Text("Edit Profile"),
+                trailing: const Icon(Icons.chevron_right),
+                onTap: () {},
               ),
-              title: const Text("Edit Profile"),
-              trailing: const Icon(Icons.chevron_right),
-              onTap: () {},
             ),
-            ListTile(
-              leading: const Icon(Icons.pin_drop),
-              title: const Text("Address"),
-              trailing: const Icon(Icons.chevron_right),
-              onTap: () {},
+            Flexible(
+              child: ListTile(
+                leading: const Icon(Icons.pin_drop),
+                title: const Text("Address"),
+                trailing: const Icon(Icons.chevron_right),
+                onTap: () {},
+              ),
             ),
-            ListTile(
-              leading: const Icon(Icons.notifications_active),
-              title: const Text("Notification"),
-              trailing: const Icon(Icons.chevron_right),
-              onTap: () {},
+            Flexible(
+              child: ListTile(
+                leading: const Icon(Icons.notifications_active),
+                title: const Text("Notification"),
+                trailing: const Icon(Icons.chevron_right),
+                onTap: () {},
+              ),
             ),
-            ListTile(
-              leading: const Icon(Icons.language),
-              title: const Text("Language"),
-              trailing: const Icon(Icons.chevron_right),
-              onTap: () {},
+            Flexible(
+              child: ListTile(
+                leading: const Icon(Icons.language),
+                title: const Text("Language"),
+                trailing: SizedBox(
+                  width: 100,
+                  child: Row(
+                    children: const [
+                      Text("English(US)"),
+                      Icon(Icons.chevron_right),
+                    ],
+                  ),
+                ),
+                onTap: () {},
+              ),
             ),
-            ListTile(
-              leading: const Icon(Icons.security),
-              title: const Text("Security"),
-              trailing: const Icon(Icons.chevron_right),
-              onTap: () {},
+            Flexible(
+              child: ListTile(
+                leading: const Icon(Icons.security),
+                title: const Text("Security"),
+                trailing: const Icon(Icons.chevron_right),
+                onTap: () {},
+              ),
             ),
-            ListTile(
-              leading: const Icon(Icons.share),
-              title: const Text("Invite Friend"),
-              trailing: const Icon(Icons.chevron_right),
-              onTap: () {},
+            Flexible(
+              child: ListTile(
+                leading: const Icon(Icons.share),
+                title: const Text("Invite Friend"),
+                trailing: const Icon(Icons.chevron_right),
+                onTap: () {},
+              ),
             ),
-            ListTile(
-              leading: const Icon(Icons.logout),
-              title: const Text("Logout"),
-              trailing: const Icon(Icons.chevron_right),
-              onTap: () {},
+            Flexible(
+              child: ListTile(
+                leading: const Icon(Icons.signpost_outlined),
+                title: const Text("Sign In"),
+                trailing: const Icon(Icons.chevron_right),
+                onTap: () => model.goToLogin(context),
+              ),
             ),
           ],
         ),

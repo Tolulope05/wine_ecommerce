@@ -7,6 +7,7 @@ import 'package:wine_ecommerce/view/main_screen.dart';
 import 'package:wine_ecommerce/view/intro_screen/intro_screen.dart';
 import 'package:wine_ecommerce/view/payment_screen.dart';
 import 'package:wine_ecommerce/view/product_details_screen.dart';
+import 'package:wine_ecommerce/view/signing/sign_in_screen.dart';
 
 import '../view/success_payment.dart';
 
@@ -41,6 +42,10 @@ class Routes {
       case RoutesName.paymentSuccess:
         return MaterialPageRoute(
           builder: (context) => const SuccessPayment(),
+        );
+      case RoutesName.signin:
+        return MaterialPageRoute(
+          builder: (context) => const SignIn(),
         );
 
       default:

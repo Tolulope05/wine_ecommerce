@@ -13,4 +13,6 @@ class RoutesName {
   static const String paymentPageRoute = "/paymentPageRoute";
   // CheckoutPage Screen Route
   static const String paymentSuccess = "/paymentSuccess";
+  // CheckoutPage Login Route
+  static const String signin = "/sign_in";
 }
