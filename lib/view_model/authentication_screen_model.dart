@@ -24,7 +24,7 @@ class AuthScreenModel extends ChangeNotifier {
     _navigationServices.navigateToSignupPage(context);
   }
 
-  void goToSignIn(BuildContext context) {
-    _navigationServices.navigateToSignupPage(context);
+  void goToSignIn(BuildContext context, [bool isPop = true]) {
+    _navigationServices.navigateToLoginPage(context, isPop = isPop);
   }
 }

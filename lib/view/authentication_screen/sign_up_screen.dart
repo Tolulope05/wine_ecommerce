@@ -79,6 +79,11 @@ class SignUp extends StatelessWidget {
                     },
                   ),
                 ),
+              ),
+              const SizedBox(height: 20),
+              GestureDetector(
+                onTap: () => model.goToSignIn(context, false),
+                child: Text("Already have an account?"),
               )
             ],
           ),

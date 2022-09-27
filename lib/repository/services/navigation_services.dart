@@ -35,11 +35,19 @@ class NavigationServices {
     Navigator.pushReplacementNamed(context, RoutesName.paymentSuccess);
   }
 
-  void navigateToLoginPage(BuildContext context) {
-    Navigator.pushNamed(context, RoutesName.signin);
+  void navigateToLoginPage(BuildContext context, [bool isPopOff = true]) {
+    if (isPopOff) {
+      Navigator.pushNamed(context, RoutesName.signin);
+    } else {
+      Navigator.pushReplacementNamed(context, RoutesName.signin);
+    }
   }
 
-  void navigateToSignupPage(BuildContext context) {
-    Navigator.pushNamed(context, RoutesName.signup);
+  void navigateToSignupPage(BuildContext context, [bool isPopOff = true]) {
+    if (isPopOff) {
+      Navigator.pushNamed(context, RoutesName.signup);
+    } else {
+      Navigator.pushReplacementNamed(context, RoutesName.signup);
+    }
   }
 }
