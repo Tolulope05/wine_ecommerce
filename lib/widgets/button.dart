@@ -4,9 +4,9 @@ import 'package:wine_ecommerce/database/consts.dart';
 class Button extends StatelessWidget {
   final String title;
   final VoidCallback function;
-  Color backgroundcolor;
-  Color textColor;
-  Button({
+  final Color backgroundcolor;
+  final Color textColor;
+  const Button({
     Key? key,
     required this.title,
     required this.function,

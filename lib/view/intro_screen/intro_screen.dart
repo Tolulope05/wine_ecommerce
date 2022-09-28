@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:provider/provider.dart';
 import 'package:wine_ecommerce/database/consts.dart';
 import 'package:wine_ecommerce/view/intro_screen/boarding_item.dart';

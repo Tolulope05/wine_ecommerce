@@ -29,7 +29,7 @@ class VerifyPhonenumber extends StatelessWidget {
                   child: const Icon(Icons.chevron_left_outlined),
                 ),
               ),
-              Flexible(
+              const Flexible(
                 child: PinCodeVerificationScreen(
                   phoneNumber: "+2348132738316",
                 ),
@@ -41,7 +41,7 @@ class VerifyPhonenumber extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         backgroundColor: wineColor,
-        child: Icon(Icons.chevron_right),
+        child: const Icon(Icons.chevron_right),
       ),
     );
   }
@@ -56,6 +56,7 @@ class PinCodeVerificationScreen extends StatefulWidget {
   }) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _PinCodeVerificationScreenState createState() =>
       _PinCodeVerificationScreenState();
 }
@@ -121,9 +122,10 @@ class _PinCodeVerificationScreenState extends State<PinCodeVerificationScreen> {
                       TextSpan(
                         text: "${widget.phoneNumber}",
                         style: const TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15),
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15,
+                        ),
                       ),
                     ],
                     style: const TextStyle(color: Colors.black54, fontSize: 15),
@@ -141,21 +143,21 @@ class _PinCodeVerificationScreenState extends State<PinCodeVerificationScreen> {
                         vertical: 8.0, horizontal: 30),
                     child: PinCodeTextField(
                       appContext: context,
-                      pastedTextStyle: TextStyle(
+                      pastedTextStyle: const TextStyle(
                         color: wineColor,
                         fontWeight: FontWeight.bold,
                       ),
                       length: 6,
                       obscureText: true,
                       obscuringCharacter: '*',
-                      obscuringWidget: const FlutterLogo(
-                        size: 24,
-                      ),
+                      // obscuringWidget: const FlutterLogo(
+                      //   size: 24,
+                      // ),
                       blinkWhenObscuring: true,
                       animationType: AnimationType.fade,
                       validator: (v) {
                         if (v!.length < 3) {
-                          return "I'm from validator";
+                          return "Too short!!";
                         } else {
                           return null;
                         }
@@ -182,10 +184,11 @@ class _PinCodeVerificationScreenState extends State<PinCodeVerificationScreen> {
                       ],
                       onCompleted: (v) {
                         debugPrint("Completed");
+                        print(v);
                       },
-                      // onTap: () {
-                      //   print("Pressed");
-                      // },
+                      onTap: () {
+                        print("Pressed");
+                      },
                       onChanged: (value) {
                         debugPrint(value);
                         setState(() {

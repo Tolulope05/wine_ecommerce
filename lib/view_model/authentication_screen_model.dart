@@ -28,9 +28,7 @@ class AuthScreenModel extends ChangeNotifier {
     _navigationServices.navigateToLoginPage(context, isPop = isPop);
   }
 
-  void goToverifyPhone(
-    BuildContext context,
-  ) {
+  void goToverifyPhone(BuildContext context) {
     _navigationServices.navigateToVerifyPhone(context);
   }
 }

@@ -65,19 +65,17 @@ class SignUp extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               Flexible(
-                child: Container(
-                  child: IntlPhoneField(
-                    decoration: InputDecoration(
-                      labelText: 'Phone Number',
-                      fillColor: Colors.grey.shade200,
-                      filled: true,
-                      border: InputBorder.none,
-                    ),
-                    initialCountryCode: 'NG',
-                    onChanged: (phone) {
-                      print(phone.completeNumber);
-                    },
+                child: IntlPhoneField(
+                  decoration: InputDecoration(
+                    labelText: 'Phone Number',
+                    fillColor: Colors.grey.shade200,
+                    filled: true,
+                    border: InputBorder.none,
                   ),
+                  initialCountryCode: 'NG',
+                  onChanged: (phone) {
+                    print(phone.completeNumber);
+                  },
                 ),
               ),
               const SizedBox(height: 20),
