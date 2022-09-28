@@ -80,7 +80,7 @@ class ProfileScreen extends StatelessWidget {
                 leading: const Icon(Icons.person),
                 title: const Text("Edit Profile"),
                 trailing: const Icon(Icons.chevron_right),
-                onTap: () {},
+                onTap: () => model.goToEditProfile(context),
               ),
               ListTile(
                 leading: const Icon(Icons.history_sharp),

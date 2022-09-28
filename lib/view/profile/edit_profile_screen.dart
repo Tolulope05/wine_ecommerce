@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:provider/provider.dart';
+import 'package:wine_ecommerce/widgets/button.dart';
 
 import '../../view_model/authentication_screen_model.dart';
 import '../../widgets/field_input.dart';
@@ -74,13 +75,13 @@ class EditProfileScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              GestureDetector(
-                onTap: () => model.goToSignIn(context, false),
-                child: const Text(
-                  "Already have an account?",
-                  style: TextStyle(color: Colors.blue),
-                ),
-              )
+              Button(
+                title: "Save",
+                function: () {
+                  // Do the save stuff and navigate back
+                  model.goBack(context);
+                },
+              ),
             ],
           ),
         ),
