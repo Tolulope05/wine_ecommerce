@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:wine_ecommerce/database/consts.dart';
 
-import '../view_model/profile_screen_model.dart';
+import '../../view_model/profile_screen_model.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -17,13 +17,17 @@ class ProfileScreen extends StatelessWidget {
             Stack(
               children: [
                 Container(
-                  height: 100,
-                  width: 100,
+                  height: 120,
+                  width: 120,
                   margin: const EdgeInsets.only(top: 20),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
+                    borderRadius: BorderRadius.circular(30),
                     image: const DecorationImage(
                       image: AssetImage("assets/profile.jpg"),
+                    ),
+                    border: Border.all(
+                      color: wineColor,
+                      width: 3.0,
                     ),
                   ),
                 ),
@@ -56,7 +60,10 @@ class ProfileScreen extends StatelessWidget {
             const SizedBox(height: 5),
             Text(
               "+2348132738316",
-              style: Theme.of(context).textTheme.bodyLarge,
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyText1!
+                  .copyWith(color: Colors.black54),
             ),
             const SizedBox(height: 10),
             Container(

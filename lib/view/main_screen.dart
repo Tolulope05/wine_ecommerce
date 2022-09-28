@@ -3,7 +3,7 @@ import 'package:wine_ecommerce/database/consts.dart';
 import 'package:wine_ecommerce/view/cart_screen.dart';
 import 'package:wine_ecommerce/view/favorite_screen.dart';
 import 'package:wine_ecommerce/view/home_screen.dart';
-import 'package:wine_ecommerce/view/profile_screen.dart';
+import 'package:wine_ecommerce/view/profile/profile_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);

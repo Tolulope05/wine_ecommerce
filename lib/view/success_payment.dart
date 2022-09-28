@@ -28,13 +28,19 @@ class SuccessPayment extends StatelessWidget {
                 width: MediaQuery.of(context).size.width * 0.4,
               ),
             ),
-            Text(
+            const Text(
               "Done!",
-              style: Theme.of(context).textTheme.headline4,
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-            Text(
-              "Order Successful!",
-              style: Theme.of(context).textTheme.bodyMedium,
+            const Text(
+              "Success. Your order was successfully made!",
+              style: TextStyle(
+                fontSize: 15,
+                color: Colors.black54,
+              ),
             ),
             Flexible(child: Container()),
             Button(

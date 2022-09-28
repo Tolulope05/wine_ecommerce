@@ -25,6 +25,8 @@ class PaymentScreen extends StatelessWidget {
           "Payment",
           style: TextStyle(
             color: wineColor,
+            fontSize: 22,
+            fontWeight: FontWeight.bold,
           ),
         ),
       ),
@@ -44,7 +46,7 @@ class PaymentScreen extends StatelessWidget {
                     child: Text(
                       "Payment Options",
                       style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                     ),
                   ),
                   const Padding(
@@ -52,7 +54,7 @@ class PaymentScreen extends StatelessWidget {
                     child: Text(
                       "\$200.00",
                       style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                     ),
                   ),
                   GestureDetector(
@@ -61,16 +63,16 @@ class PaymentScreen extends StatelessWidget {
                       model.getToPayment(context);
                     },
                     child: Container(
-                      padding: const EdgeInsets.all(12),
+                      padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
                         color: wineColor,
-                        borderRadius: BorderRadius.circular(20),
+                        borderRadius: BorderRadius.circular(10),
                       ),
                       child: const Text(
                         "Pay with PayStack",
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
-                          fontSize: 16,
+                          fontSize: 15,
                           color: Colors.white,
                         ),
                       ),
