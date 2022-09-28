@@ -7,49 +7,45 @@ import '../../database/consts.dart';
 import '../../view_model/authentication_screen_model.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
-// class VerifyPhonenumber extends StatelessWidget {
-//   const VerifyPhonenumber({Key? key}) : super(key: key);
+class VerifyPhonenumber extends StatelessWidget {
+  const VerifyPhonenumber({Key? key}) : super(key: key);
 
-//   @override
-//   Widget build(BuildContext context) {
-//     AuthScreenModel model = Provider.of<AuthScreenModel>(context);
-//     return Scaffold(
-//       body: SafeArea(
-//         child: Container(
-//           margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-//           child: Column(
-//             crossAxisAlignment: CrossAxisAlignment.start,
-//             children: [
-//               GestureDetector(
-//                 onTap: () {
-//                   model.goBack(context);
-//                 },
-//                 child: Container(
-//                   margin: const EdgeInsets.symmetric(vertical: 20),
-//                   child: const Icon(Icons.chevron_left_outlined),
-//                 ),
-//               ),
-//               Text(
-//                 "verify your OTP",
-//                 style: Theme.of(context).textTheme.headline5,
-//               ),
-//               const SizedBox(height: 10),
-//               const Text(
-//                 "Let us know you better!",
-//               ),
-//               const SizedBox(height: 20),
-//             ],
-//           ),
-//         ),
-//       ),
-//       floatingActionButton: FloatingActionButton(
-//         onPressed: () {},
-//         backgroundColor: wineColor,
-//         child: Icon(Icons.chevron_right),
-//       ),
-//     );
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    AuthScreenModel model = Provider.of<AuthScreenModel>(context);
+    return Scaffold(
+      body: SafeArea(
+        child: Container(
+          margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  model.goBack(context);
+                },
+                child: Container(
+                  margin: const EdgeInsets.symmetric(vertical: 20),
+                  child: const Icon(Icons.chevron_left_outlined),
+                ),
+              ),
+              Flexible(
+                child: PinCodeVerificationScreen(
+                  phoneNumber: "+2348132738316",
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: wineColor,
+        child: Icon(Icons.chevron_right),
+      ),
+    );
+  }
+}
 
 class PinCodeVerificationScreen extends StatefulWidget {
   final String? phoneNumber;
@@ -104,19 +100,9 @@ class _PinCodeVerificationScreenState extends State<PinCodeVerificationScreen> {
       body: GestureDetector(
         onTap: () {},
         child: SizedBox(
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
           child: ListView(
             children: <Widget>[
               const SizedBox(height: 30),
-              // SizedBox(
-              //   height: MediaQuery.of(context).size.height / 3,
-              //   child: ClipRRect(
-              //     borderRadius: BorderRadius.circular(30),
-              //     child: Image.asset(Constants.otpGifImage),
-              //   ),
-              // ),
-              const SizedBox(height: 8),
               const Padding(
                 padding: EdgeInsets.symmetric(vertical: 8.0),
                 child: Text(
@@ -130,17 +116,18 @@ class _PinCodeVerificationScreenState extends State<PinCodeVerificationScreen> {
                     const EdgeInsets.symmetric(horizontal: 30.0, vertical: 8),
                 child: RichText(
                   text: TextSpan(
-                      text: "Enter the code sent to ",
-                      children: [
-                        TextSpan(
-                            text: "${widget.phoneNumber}",
-                            style: const TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 15)),
-                      ],
-                      style:
-                          const TextStyle(color: Colors.black54, fontSize: 15)),
+                    text: "Enter the code sent to ",
+                    children: [
+                      TextSpan(
+                        text: "${widget.phoneNumber}",
+                        style: const TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15),
+                      ),
+                    ],
+                    style: const TextStyle(color: Colors.black54, fontSize: 15),
+                  ),
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -155,7 +142,7 @@ class _PinCodeVerificationScreenState extends State<PinCodeVerificationScreen> {
                     child: PinCodeTextField(
                       appContext: context,
                       pastedTextStyle: TextStyle(
-                        color: Colors.green.shade600,
+                        color: wineColor,
                         fontWeight: FontWeight.bold,
                       ),
                       length: 6,
@@ -238,7 +225,7 @@ class _PinCodeVerificationScreenState extends State<PinCodeVerificationScreen> {
                     child: const Text(
                       "RESEND",
                       style: TextStyle(
-                          color: Color(0xFF91D3B3),
+                          color: wineColor,
                           fontWeight: FontWeight.bold,
                           fontSize: 16),
                     ),
@@ -251,6 +238,20 @@ class _PinCodeVerificationScreenState extends State<PinCodeVerificationScreen> {
               Container(
                 margin:
                     const EdgeInsets.symmetric(vertical: 16.0, horizontal: 30),
+                decoration: BoxDecoration(
+                  color: wineColor,
+                  borderRadius: BorderRadius.circular(5),
+                  boxShadow: [
+                    BoxShadow(
+                        color: Colors.brown.shade200,
+                        offset: const Offset(1, -2),
+                        blurRadius: 5),
+                    BoxShadow(
+                        color: Colors.brown.shade200,
+                        offset: const Offset(-1, 2),
+                        blurRadius: 5),
+                  ],
+                ),
                 child: ButtonTheme(
                   height: 50,
                   child: TextButton(
@@ -280,19 +281,6 @@ class _PinCodeVerificationScreenState extends State<PinCodeVerificationScreen> {
                     )),
                   ),
                 ),
-                decoration: BoxDecoration(
-                    color: Colors.green.shade300,
-                    borderRadius: BorderRadius.circular(5),
-                    boxShadow: [
-                      BoxShadow(
-                          color: Colors.green.shade200,
-                          offset: const Offset(1, -2),
-                          blurRadius: 5),
-                      BoxShadow(
-                          color: Colors.green.shade200,
-                          offset: const Offset(-1, 2),
-                          blurRadius: 5)
-                    ]),
               ),
               const SizedBox(
                 height: 16,

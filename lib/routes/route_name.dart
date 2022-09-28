@@ -17,9 +17,5 @@ class RoutesName {
   static const String signin = "/sign_in";
   // Signup setup flow pages
   static const String signup = "/sign_up";
-  static const String signupSetup = "/sign_up/";
-  static final signupSetupStart = '/sign_up/$signupSetupPinCode';
-  static var signupSetupPinCode = "pincode";
-  static var signupSetupConnecting = "connecting";
-  static var signupSetupFinished = "finished";
+  static const String signupSetupPinCode = '/sign_up/pincode';
 }

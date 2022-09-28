@@ -50,4 +50,8 @@ class NavigationServices {
       Navigator.pushReplacementNamed(context, RoutesName.signup);
     }
   }
+
+  void navigateToVerifyPhone(BuildContext context) {
+    Navigator.pushNamed(context, RoutesName.signupSetupPinCode);
+  }
 }

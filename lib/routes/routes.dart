@@ -10,6 +10,7 @@ import 'package:wine_ecommerce/view/payment_screen.dart';
 import 'package:wine_ecommerce/view/product_details_screen.dart';
 
 import '../view/authentication_screen/sign_in_screen.dart';
+import '../view/authentication_screen/verify_phone_num.dart';
 import '../view/success_payment.dart';
 
 class Routes {
@@ -51,6 +52,10 @@ class Routes {
       case RoutesName.signup:
         return MaterialPageRoute(
           builder: (context) => const SignUp(),
+        );
+      case RoutesName.signupSetupPinCode:
+        return MaterialPageRoute(
+          builder: (context) => const VerifyPhonenumber(),
         );
 
       default:
