@@ -18,4 +18,6 @@ class RoutesName {
   // Signup setup flow pages
   static const String signup = "/sign_up";
   static const String signupSetupPinCode = '/sign_up/pincode';
+  //Edit User Screen
+  static const String editUser = "/edit_user";
 }

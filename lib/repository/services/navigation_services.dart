@@ -54,4 +54,8 @@ class NavigationServices {
   void navigateToVerifyPhone(BuildContext context) {
     Navigator.pushNamed(context, RoutesName.signupSetupPinCode);
   }
+
+  void navigateToEditProfileScreen(BuildContext context) {
+    Navigator.pushNamed(context, RoutesName.editUser);
+  }
 }

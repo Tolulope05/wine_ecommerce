@@ -7,4 +7,8 @@ class ProfileScreenModel extends ChangeNotifier {
   void goToLogin(BuildContext context) {
     navigationServices.navigateToLoginPage(context);
   }
+
+  void goToEditrProfile(BuildContext context) {
+    navigationServices.navigateToEditProfileScreen(context);
+  }
 }

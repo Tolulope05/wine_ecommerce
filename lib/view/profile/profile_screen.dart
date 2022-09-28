@@ -12,97 +12,95 @@ class ProfileScreen extends StatelessWidget {
     ProfileScreenModel model = Provider.of<ProfileScreenModel>(context);
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          children: [
-            Stack(
-              children: [
-                Container(
-                  height: 120,
-                  width: 120,
-                  margin: const EdgeInsets.only(top: 20),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                    image: const DecorationImage(
-                      image: AssetImage("assets/profile.jpg"),
-                    ),
-                    border: Border.all(
-                      color: wineColor,
-                      width: 3.0,
-                    ),
-                  ),
-                ),
-                Positioned(
-                  bottom: 0,
-                  right: 0,
-                  child: GestureDetector(
-                    onTap: () {},
-                    child: Container(
-                      padding: const EdgeInsets.all(5),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Stack(
+                children: [
+                  Container(
+                    height: 120,
+                    width: 120,
+                    margin: const EdgeInsets.only(top: 20),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30),
+                      image: const DecorationImage(
+                        image: AssetImage("assets/profile.jpg"),
+                      ),
+                      border: Border.all(
                         color: wineColor,
-                      ),
-                      child: const Icon(
-                        Icons.edit,
-                        color: Colors.white,
-                        size: 20,
+                        width: 3.0,
                       ),
                     ),
                   ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 10),
-            Text(
-              "Tolulope Fakunle",
-              style: Theme.of(context).textTheme.headline6,
-            ),
-            const SizedBox(height: 5),
-            Text(
-              "+2348132738316",
-              style: Theme.of(context)
-                  .textTheme
-                  .bodyText1!
-                  .copyWith(color: Colors.black54),
-            ),
-            const SizedBox(height: 10),
-            Container(
-              margin: const EdgeInsets.symmetric(
-                horizontal: 20,
+                  Positioned(
+                    bottom: 0,
+                    right: 0,
+                    child: GestureDetector(
+                      onTap: () {},
+                      child: Container(
+                        padding: const EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: wineColor,
+                        ),
+                        child: const Icon(
+                          Icons.edit,
+                          color: Colors.white,
+                          size: 20,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
-              child: Divider(
-                color: Colors.grey.shade400,
-                height: 1,
+              const SizedBox(height: 10),
+              Text(
+                "Tolulope Fakunle",
+                style: Theme.of(context).textTheme.headline6,
               ),
-            ),
-            Flexible(
-              child: ListTile(
-                leading: const Icon(
-                  Icons.perm_identity_sharp,
+              const SizedBox(height: 5),
+              Text(
+                "+2348132738316",
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyText1!
+                    .copyWith(color: Colors.black54),
+              ),
+              const SizedBox(height: 10),
+              Container(
+                margin: const EdgeInsets.symmetric(
+                  horizontal: 20,
                 ),
+                child: Divider(
+                  color: Colors.grey.shade400,
+                  height: 1,
+                ),
+              ),
+              ListTile(
+                leading: const Icon(Icons.person),
                 title: const Text("Edit Profile"),
                 trailing: const Icon(Icons.chevron_right),
                 onTap: () {},
               ),
-            ),
-            Flexible(
-              child: ListTile(
+              ListTile(
+                leading: const Icon(Icons.history_sharp),
+                title: const Text("Purchase History"),
+                trailing: const Icon(Icons.chevron_right),
+                onTap: () {},
+              ),
+              ListTile(
                 leading: const Icon(Icons.pin_drop),
                 title: const Text("Address"),
                 trailing: const Icon(Icons.chevron_right),
                 onTap: () {},
               ),
-            ),
-            Flexible(
-              child: ListTile(
+              ListTile(
                 leading: const Icon(Icons.notifications_active),
                 title: const Text("Notification"),
                 trailing: const Icon(Icons.chevron_right),
                 onTap: () {},
               ),
-            ),
-            Flexible(
-              child: ListTile(
+              ListTile(
                 leading: const Icon(Icons.language),
                 title: const Text("Language"),
                 trailing: SizedBox(
@@ -116,32 +114,26 @@ class ProfileScreen extends StatelessWidget {
                 ),
                 onTap: () {},
               ),
-            ),
-            Flexible(
-              child: ListTile(
+              ListTile(
                 leading: const Icon(Icons.security),
                 title: const Text("Security"),
                 trailing: const Icon(Icons.chevron_right),
                 onTap: () {},
               ),
-            ),
-            Flexible(
-              child: ListTile(
+              ListTile(
                 leading: const Icon(Icons.share),
                 title: const Text("Invite Friend"),
                 trailing: const Icon(Icons.chevron_right),
                 onTap: () {},
               ),
-            ),
-            Flexible(
-              child: ListTile(
+              ListTile(
                 leading: const Icon(Icons.signpost_outlined),
                 title: const Text("Sign In"),
                 trailing: const Icon(Icons.chevron_right),
                 onTap: () => model.goToLogin(context),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
