@@ -13,8 +13,13 @@ class RoutesName {
   static const String paymentPageRoute = "/paymentPageRoute";
   // Screen Route
   static const String paymentSuccess = "/paymentSuccess";
-  // Login Route
+  // SignIn Route
   static const String signin = "/sign_in";
-  // Signup Route
+  // Signup setup flow pages
   static const String signup = "/sign_up";
+  static const String signupSetup = "/sign_up/";
+  static final signupSetupStart = '/sign_up/$signupSetupPinCode';
+  static var signupSetupPinCode = "pincode";
+  static var signupSetupConnecting = "connecting";
+  static var signupSetupFinished = "finished";
 }
