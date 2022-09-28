@@ -40,7 +40,7 @@ class CartItem extends StatelessWidget {
                     "This is the wine name,full details and soon, stayed tuned  Tolu blah blah jdjdjddjdjdhdhhhdhdh",
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
                   ),
                 ),
                 const Spacer(),
@@ -51,7 +51,7 @@ class CartItem extends StatelessWidget {
                       const Text(
                         "\$200.00",
                         style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
+                            fontSize: 15, fontWeight: FontWeight.bold),
                       ),
                       const Spacer(),
                       Row(

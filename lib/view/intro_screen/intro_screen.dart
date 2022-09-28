@@ -44,7 +44,7 @@ class _IntroScreenState extends State<IntroScreen>
                   "Skip",
                   style: TextStyle(
                     color: greyColor,
-                    fontSize: 20,
+                    fontSize: 18,
                   ),
                 ),
               ),

@@ -62,19 +62,19 @@ class ProductDetailsScreen extends StatelessWidget {
               "Name",
               style: TextStyle(
                 color: wineColor,
-                fontSize: 20,
-                fontWeight: FontWeight.w500,
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
               ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Text(
               wineData.name,
               style: Theme.of(context)
                   .textTheme
                   .bodyText1!
-                  .copyWith(color: greyText, fontSize: 18),
+                  .copyWith(color: greyText, fontSize: 15),
             ),
           ),
           Container(
@@ -83,8 +83,8 @@ class ProductDetailsScreen extends StatelessWidget {
               "Description",
               style: TextStyle(
                 color: wineColor,
-                fontSize: 20,
-                fontWeight: FontWeight.w500,
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
               ),
             ),
           ),
@@ -92,10 +92,9 @@ class ProductDetailsScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Text(
               wineData.description,
-              style: Theme.of(context)
-                  .textTheme
-                  .bodyText1!
-                  .copyWith(color: greyText),
+              style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                    color: greyText,
+                  ),
             ),
           ),
           const Padding(
@@ -127,15 +126,14 @@ class ProductDetailsScreen extends StatelessWidget {
                       .bodyText1!
                       .copyWith(color: greyText),
                 ),
-                Expanded(
-                  flex: 1,
-                  child: Container(),
+                Flexible(child: Container()),
+                Text(
+                  "Sugar:",
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyText1!
+                      .copyWith(fontSize: 16),
                 ),
-                Text("Sugar:",
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyText1!
-                        .copyWith(fontSize: 16)),
                 Text(
                   wineData.sugar,
                   style: Theme.of(context)
@@ -143,7 +141,7 @@ class ProductDetailsScreen extends StatelessWidget {
                       .bodyText1!
                       .copyWith(color: greyText),
                 ),
-                Expanded(child: Container()),
+                Flexible(child: Container()),
               ],
             ),
           ),

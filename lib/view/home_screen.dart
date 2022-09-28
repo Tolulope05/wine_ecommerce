@@ -27,8 +27,8 @@ class HomeScreen extends StatelessWidget {
                     "What would you like?",
                     style: TextStyle(
                       color: wineColor,
-                      fontSize: 24,
-                      fontWeight: FontWeight.w500,
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
@@ -86,7 +86,7 @@ class HomeScreen extends StatelessWidget {
                                 color: index == model.selectedIndex
                                     ? wineColor
                                     : greyText,
-                                fontSize: 18,
+                                fontSize: 15,
                               ),
                             ),
                           ),

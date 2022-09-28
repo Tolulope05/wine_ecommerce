@@ -8,13 +8,13 @@ const String wineGlassFive = 'assets/wine_image_five.svg';
 const String wineCheer = 'assets/red_wine.png';
 
 // Colors
-const Color greyColor = Color(0XFF9A9FA7);
+const Color greyColor = Colors.black45;
 const Color wineColor = Color(0XFF421926);
 const Color midWineColor = Color(0XFFF4DEE3);
 const Color lightWine = Color(0xffFFF5F7);
-const Color greyText = Color(0XFFB3B7BC);
+const Color greyText = Colors.black54;
 
-//
+//wines
 const String wineCard1 = 'assets/wines/domaine-1.jpeg';
 const String wineCard2 = 'assets/wines/screaming-eagle.jpg';
 const String wineCard3 = 'assets/wines/domaine-2.jpg';

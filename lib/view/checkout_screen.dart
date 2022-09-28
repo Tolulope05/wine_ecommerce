@@ -13,6 +13,7 @@ class CheckoutScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     CheckoutScreenModel model = Provider.of<CheckoutScreenModel>(context);
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       appBar: AppBar(
           elevation: 0,
           centerTitle: true,
@@ -27,6 +28,8 @@ class CheckoutScreen extends StatelessWidget {
             "Checkout",
             style: TextStyle(
               color: wineColor,
+              fontSize: 22,
+              fontWeight: FontWeight.bold,
             ),
           )),
       body: Stack(
@@ -38,87 +41,100 @@ class CheckoutScreen extends StatelessWidget {
                 index: model.tabView,
                 tags: model.tags,
               ),
-              model.tabView == 0
-                  ? Column(
-                      children: [
-                        const ListTile(
-                          leading: Icon(
-                            Icons.access_time_sharp,
-                          ),
-                          title: Text("30-40 mins"),
-                        ),
-                        const ListTile(
-                          leading: Icon(
-                            Icons.pin_drop,
-                          ),
-                          title: Text("13 OakView, Lagos Nigeria"),
-                        ),
-                        Container(
-                          height: 220,
-                          margin: const EdgeInsets.symmetric(
-                            horizontal: 15,
-                            vertical: 10,
-                          ),
-                          decoration:
-                              BoxDecoration(color: greyColor.withOpacity(0.2)),
-                          child: const Center(
-                            child: Text("Map View"),
-                          ),
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(
-                            left: 15,
-                            right: 15,
-                            top: 5,
-                            bottom: 10,
-                          ),
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 10, vertical: 10),
-                          decoration: BoxDecoration(
-                              color: Colors.grey.shade200,
-                              borderRadius: BorderRadius.circular(15)),
-                          height: 45,
-                          child: TextField(
-                            controller: model.locationController,
-                            onTap: () {},
-                            onChanged: (value) {
-                              model.locationController.text = value;
-                            },
-                            decoration:
-                                const InputDecoration(border: InputBorder.none),
-                          ),
-                        ),
-                      ],
-                    )
-                  : Column(
-                      children: [
-                        const ListTile(
-                          leading: Icon(
-                            Icons.access_time_sharp,
-                          ),
-                          title: Text("Available on XX/YY/ZZZZ"),
-                        ),
-                        const ListTile(
-                          leading: Icon(
-                            Icons.pin_drop,
-                          ),
-                          title: Text("13 OakView, Lagos Nigeria"),
-                        ),
-                        Container(
-                          height: 220,
-                          margin: const EdgeInsets.symmetric(
-                            horizontal: 15,
-                            vertical: 10,
-                          ),
-                          decoration:
-                              BoxDecoration(color: greyColor.withOpacity(0.2)),
-                          child: const Center(
-                            child:
-                                Text("Map Guide showing our Pickup Locattion"),
-                          ),
-                        ),
-                      ],
-                    )
+              if (model.tabView == 0)
+                Column(
+                  children: [
+                    ListTile(
+                      leading: const Icon(
+                        Icons.access_time_sharp,
+                      ),
+                      title: Text(
+                        "30-40 mins",
+                        style: Theme.of(context).textTheme.bodyText1,
+                      ),
+                    ),
+                    ListTile(
+                      leading: const Icon(
+                        Icons.pin_drop,
+                      ),
+                      title: Text(
+                        "13 OakView, Lagos Nigeria",
+                        style: Theme.of(context).textTheme.bodyText1,
+                      ),
+                    ),
+                    Container(
+                      height: 220,
+                      margin: const EdgeInsets.symmetric(
+                        horizontal: 15,
+                        vertical: 10,
+                      ),
+                      decoration:
+                          BoxDecoration(color: greyColor.withOpacity(0.2)),
+                      child: const Center(
+                        child: Text("Map View"),
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.only(
+                        left: 15,
+                        right: 15,
+                        top: 5,
+                        bottom: 10,
+                      ),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10, vertical: 10),
+                      decoration: BoxDecoration(
+                        color: Colors.grey.shade200,
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      height: 45,
+                      child: TextField(
+                        controller: model.locationController,
+                        onTap: () {},
+                        onChanged: (value) {
+                          model.locationController.text = value;
+                        },
+                        decoration:
+                            const InputDecoration(border: InputBorder.none),
+                      ),
+                    ),
+                  ],
+                )
+              else
+                Column(
+                  children: [
+                    ListTile(
+                      leading: const Icon(
+                        Icons.access_time_sharp,
+                      ),
+                      title: Text(
+                        "Available on XX/YY/ZZZZ",
+                        style: Theme.of(context).textTheme.bodyText1,
+                      ),
+                    ),
+                    ListTile(
+                      leading: const Icon(
+                        Icons.pin_drop,
+                      ),
+                      title: Text(
+                        "13 OakView, Lagos Nigeria",
+                        style: Theme.of(context).textTheme.bodyText1,
+                      ),
+                    ),
+                    Container(
+                      height: 220,
+                      margin: const EdgeInsets.symmetric(
+                        horizontal: 15,
+                        vertical: 10,
+                      ),
+                      decoration:
+                          BoxDecoration(color: greyColor.withOpacity(0.2)),
+                      child: const Center(
+                        child: Text("Map Guide showing our Pickup Locattion"),
+                      ),
+                    ),
+                  ],
+                )
             ],
           ),
           Positioned(
@@ -137,7 +153,7 @@ class CheckoutScreen extends StatelessWidget {
                         "Total Price:",
                         style: TextStyle(
                           color: wineColor,
-                          fontSize: 20,
+                          fontSize: 18,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
@@ -145,7 +161,7 @@ class CheckoutScreen extends StatelessWidget {
                         "\$2999",
                         style: TextStyle(
                           color: wineColor,
-                          fontSize: 20,
+                          fontSize: 18,
                           fontWeight: FontWeight.w500,
                         ),
                       ),

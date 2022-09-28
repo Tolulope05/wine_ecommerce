@@ -18,6 +18,7 @@ class BoardingItem extends StatelessWidget {
         body: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
                 padding: const EdgeInsets.all(10.0),
@@ -31,8 +32,8 @@ class BoardingItem extends StatelessWidget {
                       subtitleText,
                       textAlign: TextAlign.center,
                       style: const TextStyle(
-                        color: Color(0xff131313),
-                        fontSize: 20,
+                        color: Colors.black,
+                        fontSize: 22,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -41,8 +42,8 @@ class BoardingItem extends StatelessWidget {
                       titleText,
                       textAlign: TextAlign.center,
                       style: const TextStyle(
-                        color: Color(0xff131313),
-                        fontSize: 16,
+                        color: Colors.black54,
+                        fontSize: 15,
                         fontWeight: FontWeight.normal,
                       ),
                     ),

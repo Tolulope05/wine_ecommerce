@@ -18,20 +18,23 @@ class Button extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: function,
-      behavior: HitTestBehavior.opaque,
+      behavior: HitTestBehavior.translucent,
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(14),
-            color: backgroundcolor,
-            border: Border.all(
-              color: wineColor,
-            )),
+          borderRadius: BorderRadius.circular(14),
+          color: backgroundcolor,
+          border: Border.all(
+            color: wineColor,
+          ),
+        ),
         child: Center(
           child: Text(
-            title,
+            title.toUpperCase(),
             style: TextStyle(
               color: textColor,
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
             ),
           ),
         ),
