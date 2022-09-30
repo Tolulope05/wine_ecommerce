@@ -45,7 +45,7 @@ class HomeScreen extends StatelessWidget {
                       borderSide: const BorderSide(color: greyColor),
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    labelText: "Search...",
+                    labelText: "Search..",
                     labelStyle: const TextStyle(color: greyColor),
                     enabledBorder: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(20.0)),
@@ -67,13 +67,13 @@ class HomeScreen extends StatelessWidget {
                   child: ListView.builder(
                     shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
-                    itemBuilder: ((context, index) {
+                    itemBuilder: (context, index) {
                       return GestureDetector(
                         onTap: () => model.changeIndex(index),
                         child: Container(
                           padding: EdgeInsets.symmetric(
                               horizontal:
-                                  index == model.selectedIndex ? 25 : 8),
+                                  index == model.selectedIndex ? 10 : 8),
                           decoration: BoxDecoration(
                               color: index == model.selectedIndex
                                   ? greyColor.withOpacity(0.2)
@@ -92,7 +92,7 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                       );
-                    }),
+                    },
                     itemCount: model.tags.length,
                   ),
                 );
@@ -107,6 +107,7 @@ class HomeScreen extends StatelessWidget {
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
+                      childAspectRatio: 0.8,
                     ),
                     itemBuilder: ((context, index) {
                       var wine = model.wineList[index];
