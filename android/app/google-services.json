@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "658481871416",
+    "project_id": "wine-ecommerce-b6cf5",
+    "storage_bucket": "wine-ecommerce-b6cf5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:658481871416:android:ff477627e59c768f1944cd",
+        "android_client_info": {
+          "package_name": "com.tolucodes.wine_ecommerce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "658481871416-vitk8n1fvbr2tev3tgvbndadltivthpm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUxBWbhSKHyTysqXfeBmi5LB9OY2Wj5Vo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "658481871416-vitk8n1fvbr2tev3tgvbndadltivthpm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

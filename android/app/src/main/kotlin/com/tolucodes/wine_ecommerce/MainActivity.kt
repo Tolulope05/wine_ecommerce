@@ -1,4 +1,4 @@
-package com.example.wine_ecommerce
+package com.tolucodes.wine_ecommerce
 
 import io.flutter.embedding.android.FlutterActivity
 

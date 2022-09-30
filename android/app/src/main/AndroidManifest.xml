@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.wine_ecommerce">
+    package="com.tolucodes.wine_ecommerce">
    <application
         android:label="wine_ecommerce"
         android:name="${applicationName}"
