@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:wine_ecommerce/database/consts.dart';
@@ -5,7 +6,9 @@ import 'package:wine_ecommerce/repository/providers/providers.dart';
 import 'package:wine_ecommerce/routes/route_name.dart';
 import 'package:wine_ecommerce/routes/routes.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
