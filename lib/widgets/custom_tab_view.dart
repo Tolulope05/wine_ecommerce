@@ -19,7 +19,7 @@ class CustomTabView extends StatefulWidget {
 class _CustomTabViewState extends State<CustomTabView> {
   Widget _buildTags(int index) {
     return Expanded(
-      child: GestureDetector(
+      child: InkWell(
         onTap: () {
           widget.changeTab(index);
         },

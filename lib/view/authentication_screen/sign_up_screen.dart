@@ -19,7 +19,7 @@ class SignUp extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              GestureDetector(
+              InkWell(
                 onTap: () {
                   model.goBack(context);
                 },
@@ -79,7 +79,7 @@ class SignUp extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              GestureDetector(
+              InkWell(
                 onTap: () => model.goToSignIn(context, false),
                 child: const Text(
                   "Already have an account?",

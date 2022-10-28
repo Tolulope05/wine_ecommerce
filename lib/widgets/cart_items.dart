@@ -56,7 +56,7 @@ class CartItem extends StatelessWidget {
                       const Spacer(),
                       Row(
                         children: [
-                          GestureDetector(
+                          InkWell(
                             onTap: () {},
                             child: const Icon(Icons.remove),
                           ),
@@ -77,7 +77,7 @@ class CartItem extends StatelessWidget {
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                           ),
-                          GestureDetector(
+                          InkWell(
                             onTap: () {},
                             child: const Icon(Icons.add),
                           )

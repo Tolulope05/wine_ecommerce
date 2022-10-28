@@ -16,7 +16,7 @@ class Button extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
       onTap: function,
       behavior: HitTestBehavior.translucent,
       child: Container(

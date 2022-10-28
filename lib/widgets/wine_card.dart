@@ -15,7 +15,7 @@ class WineCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     HomeScreenModel model = Provider.of<HomeScreenModel>(context);
-    return GestureDetector(
+    return InkWell(
       onTap: () {
         model.goToDetailsPage(context, wine);
       },
@@ -64,7 +64,7 @@ class WineCard extends StatelessWidget {
                         fontSize: 14,
                       ),
                     ),
-                    GestureDetector(
+                    InkWell(
                       onTap: () {},
                       child: const Icon(
                         Icons.add_circle_outlined,

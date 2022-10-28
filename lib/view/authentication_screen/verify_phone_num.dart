@@ -20,7 +20,7 @@ class VerifyPhonenumber extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              GestureDetector(
+              InkWell(
                 onTap: () {
                   model.goBack(context);
                 },
@@ -98,7 +98,7 @@ class _PinCodeVerificationScreenState extends State<PinCodeVerificationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: GestureDetector(
+      body: InkWell(
         onTap: () {},
         child: SizedBox(
           child: ListView(

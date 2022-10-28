@@ -18,7 +18,7 @@ class MyIconButton extends StatelessWidget {
         color: midWineColor,
         borderRadius: BorderRadius.circular(10),
       ),
-      child: GestureDetector(
+      child: InkWell(
         onTap: onPress,
         child: icon,
       ),

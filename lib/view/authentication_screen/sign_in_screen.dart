@@ -19,7 +19,7 @@ class SignIn extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                GestureDetector(
+                InkWell(
                   onTap: () {
                     model.goBack(context);
                   },
@@ -51,7 +51,7 @@ class SignIn extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 10),
-                GestureDetector(
+                InkWell(
                   onTap: () {},
                   child: const Text("Forgot Password?"),
                 ),
@@ -101,7 +101,7 @@ class SignIn extends StatelessWidget {
                       "Dont have an account?",
                       style: TextStyle(),
                     ),
-                    GestureDetector(
+                    InkWell(
                       onTap: () {
                         // Sign in with Email and Password then navigate back to where you are before
                         model.goToSignUp(context);

@@ -57,7 +57,7 @@ class PaymentScreen extends StatelessWidget {
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                     ),
                   ),
-                  GestureDetector(
+                  InkWell(
                     behavior: HitTestBehavior.opaque,
                     onTap: () {
                       model.getToPayment(context);

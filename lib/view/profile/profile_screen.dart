@@ -35,7 +35,7 @@ class ProfileScreen extends StatelessWidget {
                   Positioned(
                     bottom: 0,
                     right: 0,
-                    child: GestureDetector(
+                    child: InkWell(
                       onTap: () {},
                       child: Container(
                         padding: const EdgeInsets.all(5),

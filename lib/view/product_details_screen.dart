@@ -19,7 +19,7 @@ class ProductDetailsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: lightWine,
-        leading: GestureDetector(
+        leading: InkWell(
           onTap: () {
             model.getBack(context);
           },
@@ -29,7 +29,7 @@ class ProductDetailsScreen extends StatelessWidget {
           ),
         ),
         actions: [
-          GestureDetector(
+          InkWell(
             child: const Icon(
               Icons.favorite_border,
               color: wineColor,

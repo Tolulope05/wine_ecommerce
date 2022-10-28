@@ -68,7 +68,7 @@ class HomeScreen extends StatelessWidget {
                     shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
-                      return GestureDetector(
+                      return InkWell(
                         onTap: () => model.changeIndex(index),
                         child: Container(
                           padding: EdgeInsets.symmetric(
