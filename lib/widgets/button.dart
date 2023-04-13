@@ -18,7 +18,6 @@ class Button extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: function,
-      behavior: HitTestBehavior.translucent,
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
         decoration: BoxDecoration(
