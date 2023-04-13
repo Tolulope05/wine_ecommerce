@@ -58,7 +58,6 @@ class PaymentScreen extends StatelessWidget {
                     ),
                   ),
                   InkWell(
-                    behavior: HitTestBehavior.opaque,
                     onTap: () {
                       model.getToPayment(context);
                     },
